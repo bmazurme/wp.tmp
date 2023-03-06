@@ -1,0 +1,9 @@
+.switcher__label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color);
+  margin: 0 14px 0 0;
+  padding: 0;
+}

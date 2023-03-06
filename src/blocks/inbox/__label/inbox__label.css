@@ -1,0 +1,10 @@
+.inbox__label {
+  display: flex;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #a0a0a0;
+  margin: 10px 0 0;
+}

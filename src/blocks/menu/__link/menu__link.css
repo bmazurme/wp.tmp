@@ -1,0 +1,29 @@
+.menu__link {
+  text-decoration: none;
+  margin: 0;
+  padding: 0 10px 0 0;
+  color: var(--color-link);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .menu__link {
+
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .menu__link {
+
+  }
+}

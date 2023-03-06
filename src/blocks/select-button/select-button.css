@@ -1,0 +1,128 @@
+.select-button {
+  cursor: default;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  border: #f4f4f4 1px solid;
+  margin: 5px 0 0;
+  padding: 0 20px;
+  height: 46px;
+}
+
+.select-options {
+  --tw-bg-opacity: 1;
+  --tw-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+  --tw-ring-opacity: 0.05;
+  border-radius: 0.375rem;
+  font-size: 14px;
+  line-height: 1.5rem;
+  margin-top: 0.25rem;
+  max-height: 15rem;
+  overflow: auto;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  position: absolute;
+  width: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+.block {
+  display: block;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-icon, .select-options {
+  background-color: rgb(255 255 255/var(--tw-bg-opacity));
+}
+.z-40 {
+  z-index: 40;
+}
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39/var(--tw-text-opacity));
+}
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.absolute {
+  position: absolute;
+}
+.inset-y-0 {
+  bottom: 0;
+  top: 0;
+}
+.pointer-events-none {
+  pointer-events: none;
+}
+.right-0 {
+  right: 0;
+}
+.py-2 {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+.pl-10 {
+  padding-left: 2.5rem;
+}
+.pr-4 {
+  padding-right: 1rem;
+}
+.pr-2 {
+  padding-right: 0.5rem;
+}
+.pl-3 {
+  padding-left: 0.75rem;
+}
+.pointer-events-none {
+  pointer-events: none;
+}
+.flex {
+  display: flex;
+}
+.h-5 {
+  height: 1.25rem;
+}
+.w-5 {
+  width: 1.25rem;
+}
+.left-0 {
+  left: 0;
+}
+svg:not(:root) {
+  overflow-clip-margin: content-box;
+  overflow: hidden;
+}
+ul {
+  list-style: none;
+  box-sizing: border-box;
+  padding: 0;
+}
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39/var(--tw-text-opacity));
+}

@@ -1,0 +1,62 @@
+html {
+  --background: #fafafa;
+  --background-container: #fff;
+  --color: #000;
+  --color-link: #000;
+  --background-profile-button: #fff;
+}
+
+html[data-theme='dark'] {
+  --background: #161616;
+  --background-container: #202124;
+  --color: #d6d6d6;
+  --color-link: #bfbfbf;
+  --background-profile-button: #bfbfbf;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 70px;
+  padding-right: 70px;
+  box-sizing: border-box;
+  font-family: 'Inter','Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  color: var(--color);
+  --title-size: 22px;
+  --background: #fafafa;
+
+
+  --header-background: #ffffff;
+  --card-background: #ffffff;
+  --techs-background: #f5f5f5;;
+  --promo-tab-background: #e8e8e8;
+  --promo-cover-background: #f5f5f5;
+  --promo-signin-button-bg: #3456f3;
+  --promo-signup-button: #000000;
+  --promo-signin-button: #ffffff;
+  --promo-title: #000000;
+  --promo-rogressbar-left-bg: #3456f3;
+  --card-list-background: #f5f5f5;;
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  .root {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 580px) and (max-width: 879px) {
+  .root {
+    padding-left: 30px;
+    padding-right: 40px;
+  }
+}

@@ -1,0 +1,26 @@
+.switcher__button_on {
+  display: flex;
+  flex-direction: row;
+  width: 36px;
+  height: 20px;
+  border: 0;
+  background: #2be080;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.switcher__button_on::after {
+  content: "";
+  background: #ffffff;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1
+}

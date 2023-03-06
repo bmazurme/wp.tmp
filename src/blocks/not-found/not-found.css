@@ -1,0 +1,26 @@
+.not-found {
+  border: 2px solid #f4f4f4;
+  width: auto;
+  margin: 80px 70px 0;
+  padding: 0;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 6px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .not-found {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .not-found {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
