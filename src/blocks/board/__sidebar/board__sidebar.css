@@ -48,6 +48,10 @@
   background-color: yellowgreen;
   justify-content: center;
   align-items: center;
+  border: 0;
+}
+.sidebar__add:hover {
+  cursor: pointer;
 }
 
 .sidebar__list {

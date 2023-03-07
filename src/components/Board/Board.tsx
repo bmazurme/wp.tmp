@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 import projects from '../../mock/projects';
+import Popup from '../Popup';
 
 type Project = {
   id: number;
@@ -14,11 +15,18 @@ type Project = {
 };
 
 export default function Board() {
+  const [popupAddProject, setPopupAddProject] = useState(false);
   const [project, setProject] = useState<Project | null>(null);
   const [sidebar, setSidebar] = useState(false);
   const toggleSidebar = () => setSidebar(!sidebar);
   const openProject = (currentProject: Project) => {
     setProject(currentProject);
+  };
+  const openPopupAddProject = () => {
+    setPopupAddProject(true);
+  };
+  const closePopupAddProject = () => {
+    setPopupAddProject(false);
   };
 
   return (
@@ -33,7 +41,7 @@ export default function Board() {
                 {sidebar ? '>' : '<'}
               </button>
             </div>
-            <div className="sidebar__add">+</div>
+            <button type="button" onClick={openPopupAddProject} className="sidebar__add">+</button>
             {sidebar
               ? null
               : (
@@ -57,13 +65,14 @@ export default function Board() {
           </h3>
           <ul>
             {project?.modules.map((module) => (
-              <li key={module}>
+              <li className="module" key={module}>
                 {module}
               </li>
             ))}
           </ul>
         </div>
       </div>
+      <Popup isOpen={popupAddProject} onClose={closePopupAddProject} text={{ title: 'title', description: 'd' }} />
     </section>
   );
 }
