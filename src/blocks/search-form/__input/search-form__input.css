@@ -1,8 +1,10 @@
 .search-form__input {
-  height: 50px;
-  border-radius: 8px;
-  padding: 0 13px;
-  margin: 0 10px 0 0;
+  /*height: 50px;*/
+  height: 30px;
+  border-radius: 5px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  margin: 0 5px 0 0;
   color: #a0a0a0;
   background: #f4f4f4;
   border: 1px solid #f4f4f4;

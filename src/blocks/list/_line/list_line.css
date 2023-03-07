@@ -1,0 +1,10 @@
+.list_line {
+  background-color: rgba(0,0,0,0);
+  border: #e8e8e8 1px solid;
+}
+
+@media (prefers-color-scheme: dark) {
+  .list_line {
+    color: #e8e8e8;
+  }
+}

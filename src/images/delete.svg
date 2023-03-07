@@ -1,4 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="24" height="24" rx="12" fill="#F5F5F5"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12 13.0605L14.6516 15.7121L15.7122 14.6514L13.0607 11.9999L15.7121 9.34844L14.6514 8.28778L12 10.9392L9.34826 8.28748L8.2876 9.34814L10.9393 11.9999L8.28748 14.6517L9.34814 15.7124L12 13.0605Z" fill="black"/>
-</svg>
+<?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;}</style></defs><title/><g data-name="Layer 2" id="Layer_2"><path d="M16,29A13,13,0,1,1,29,16,13,13,0,0,1,16,29ZM16,5A11,11,0,1,0,27,16,11,11,0,0,0,16,5Z"/><path d="M11.76,21.24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.41l8.49-8.49A1,1,0,0,1,21,12.46L12.46,21A1,1,0,0,1,11.76,21.24Z"/><path d="M20.24,21.24a1,1,0,0,1-.7-.29l-8.49-8.49a1,1,0,0,1,1.41-1.41L21,19.54A1,1,0,0,1,21,21,1,1,0,0,1,20.24,21.24Z"/></g><g id="frame"><rect class="cls-1" height="32" width="32"/></g></svg>

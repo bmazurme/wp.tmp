@@ -6,7 +6,7 @@
   - [X] Input
   - [ ] Checkbox
   - [ ] Select
-  - [X] Datapiker
+  - [X] Datepiker
   - [ ] Accordion
   - [ ] Badge
   - [X] Avatar

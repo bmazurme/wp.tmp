@@ -2,12 +2,16 @@
   position: absolute;
   height: 32px;
   width: 32px;
-  background-image: url(../../../images/close.svg);
+  /* background-image: url(../../../images/close.svg); */
+  /* background-color: #ebebeb; */
+  background-color: var(--color);
+  -webkit-mask: url(../../../images/close.svg) no-repeat center;
+  mask: url(../../../images/close.svg) no-repeat center;
   background-repeat: no-repeat;
   background-size: cover;
   top: -40px;
   right: -40px;
-  background-color: rgba(0, 0, 0, 0);
+  /* background-color: rgba(0, 0, 0, 0); */
   border: 0;
 }
 

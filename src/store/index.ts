@@ -7,11 +7,9 @@ import { createBrowserHistory, createMemoryHistory } from 'history';
 import { authApi, usersApi, moviesApi } from './api';
 import userReducer from './slices/userSlice';
 import { isServer } from '../utils';
-import movieStatsReducer from './slices/movieStatsSlice';
 
 export * from './api/authApi/endpoints';
 export * from './api/usersApi/endpoints';
-export * from './api/moviesApi/endpoints';
 export * from './slices';
 
 // global redeclared types
@@ -30,7 +28,6 @@ export const store = configureStore({
     router: routerReducer,
     // Add the generated reducer as a specific top-level slice
     user: userReducer,
-    movieStats: movieStatsReducer,
     [authApi.reducerPath]: authApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
     [moviesApi.reducerPath]: moviesApi.reducer,

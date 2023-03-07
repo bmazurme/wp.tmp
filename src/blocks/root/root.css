@@ -1,6 +1,7 @@
 html {
   --background: #fafafa;
   --background-container: #fff;
+  --background-board: #fff;
   --color: #000;
   --color-link: #000;
   --background-profile-button: #fff;
@@ -9,6 +10,7 @@ html {
 html[data-theme='dark'] {
   --background: #161616;
   --background-container: #202124;
+  --background-board: #222222;
   --color: #d6d6d6;
   --color-link: #bfbfbf;
   --background-profile-button: #bfbfbf;
@@ -17,8 +19,8 @@ html[data-theme='dark'] {
 .root {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   height: 100%;
-  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
   padding-left: 70px;
@@ -29,7 +31,6 @@ html[data-theme='dark'] {
   color: var(--color);
   --title-size: 22px;
   --background: #fafafa;
-
 
   --header-background: #ffffff;
   --card-background: #ffffff;

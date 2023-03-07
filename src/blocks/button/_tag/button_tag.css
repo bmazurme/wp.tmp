@@ -1,0 +1,14 @@
+.button_tag {
+  box-sizing: border-box;
+  align-items: center;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 0;
+  margin: 0 5px 0 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: 12px;
+  background-color: #61bd4f;
+}

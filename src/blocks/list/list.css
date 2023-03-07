@@ -1,0 +1,15 @@
+.list {
+  /*background-color: #f4f4f4;*/
+  border: #f4f4f4 1px solid;
+  border-radius: 5px;
+  width: 100%;
+  margin: 5px 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  overflow: hidden;
+}

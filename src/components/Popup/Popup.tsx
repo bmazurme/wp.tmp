@@ -1,7 +1,8 @@
 import React from 'react';
+import type { PropsWithChildren } from 'react';
 
-export default function InfoTooltip({ onClose, text, isOpen }
-  : { onClose: () => void, text: Record<string, string>, isOpen: boolean }) {
+export default function Popup({ onClose, isOpen, children }
+  : PropsWithChildren & { isOpen: boolean, onClose: () => void }) {
   return (
     <div className={`popup popup_tooltip ${isOpen ? 'popup_active' : ''}`}>
       <div className="popup__container">
@@ -12,8 +13,7 @@ export default function InfoTooltip({ onClose, text, isOpen }
           onClick={onClose}
         />
         <div className="tooltip">
-          <p className="popup__title">{text.title}</p>
-          <p className="popup__text">{text.description}</p>
+          {children}
         </div>
       </div>
     </div>

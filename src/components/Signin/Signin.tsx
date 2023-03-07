@@ -10,7 +10,7 @@ import Logo from '../Logo';
 import Input from '../Input';
 import Button from '../Button';
 import SignFooter from '../SignFooter';
-import InfoTooltip from '../Popup';
+import { InfoTooltip } from '../Popup';
 
 type FormPayload = {
   login: string;

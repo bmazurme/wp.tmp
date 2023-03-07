@@ -1,10 +1,9 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import BoardPage from './pages/Board';
+import WorkplacePage from './pages/Workplace';
 import UiKitPage from './pages/UiKit';
 import AboutPage from './pages/About';
-import HistoryPage from './pages/History';
 
 import ProfilePage from './pages/Profile';
 import ProfileEditPage from './pages/ProfileEdit';
@@ -39,7 +38,7 @@ export default function App() {
   return (
     <ThemeContext.Provider value={providerValue}>
       <Routes>
-        <Route index element={(<BoardPage />)} />
+        <Route index element={(<WorkplacePage />)} />
 
         <Route path={Paths.PROJECT.INDEX} element={(<ProjectPage />)} />
         <Route path={Paths.PROJECT.EDIT} element={(<ProjectEditPage />)} />
@@ -57,7 +56,6 @@ export default function App() {
         <Route path={Paths.PASSWORD.NEW} element={(<PasswordNew />)} />
 
         <Route path={Paths.ABOUT} element={(<AboutPage />)} />
-        <Route path={Paths.HISTORY} element={(<HistoryPage />)} />
         <Route path={Paths.UI_KIT} element={(<UiKitPage />)} />
 
         <Route path="*" element={(<NotFoundPage />)} />

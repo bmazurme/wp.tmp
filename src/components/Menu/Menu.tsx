@@ -15,10 +15,6 @@ const links = [
     to: '/',
   },
   {
-    label: 'History',
-    to: '/history',
-  },
-  {
     label: 'About',
     to: '/about',
   },

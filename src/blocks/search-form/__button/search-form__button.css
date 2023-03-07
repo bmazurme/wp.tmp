@@ -1,12 +1,13 @@
 .search-form__button {
-  box-sizing: content-box;
+  box-sizing: border-box;
   align-items: center;
   align-self: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
   border: 0;
   margin: 0;
+  padding: 15px;
   cursor: pointer;
   background: #3456f3 url(../../../images/search.svg) no-repeat center;
   background-size: 22px;
