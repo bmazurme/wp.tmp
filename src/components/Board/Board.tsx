@@ -2,22 +2,16 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, FormEvent } from 'react';
+
 import SearchForm from '../SearchForm';
-import Popup, { InfoTooltip } from '../Popup';
+import Popup from '../Popup';
+import Module from '../Module/Module';
 import { ProjectType } from '../Workplace';
 
 export default function Board({ project }: { project: ProjectType | null }) {
-  const [popupEditModule, setPopupEditModule] = useState(false);
   const [popupEditProject, setPopupEditProject] = useState(false);
   const [popupEditFilter, setPopupEditFilter] = useState(false);
   const [popupEditUsers, setPopupEditUsers] = useState(false);
-
-  const closePopupEditModule = () => {
-    setPopupEditModule(false);
-  };
-  const openPopupEditModule = () => {
-    setPopupEditModule(true);
-  };
 
   const openPopupEditProject = () => {
     setPopupEditProject(true);
@@ -60,24 +54,8 @@ export default function Board({ project }: { project: ProjectType | null }) {
         <button className="button_menu" type="button" onClick={openPopupEditProject} />
       </h3>
       <ul className="modules">
-        {project?.modules.map((module) => (
-          <li className="module" key={module} onClick={openPopupEditModule}>
-            <button className="button_tag" type="button" onClick={() => console.log(0)}>T</button>
-            <h5 className="module__name">{module}</h5>
-            <button type="button" className="button_settings">...</button>
-            <button
-              type="button"
-              onClick={openPopupEditProject}
-              className="button_delete"
-            />
-          </li>
-        ))}
+        {project?.modules.map((module) => (<Module module={module} />))}
       </ul>
-      <InfoTooltip
-        isOpen={popupEditModule}
-        onClose={closePopupEditModule}
-        text={{ title: 'Edit module', description: 'module' }}
-      />
       <Popup
         isOpen={popupEditFilter}
         onClose={closePopupEditFilter}
