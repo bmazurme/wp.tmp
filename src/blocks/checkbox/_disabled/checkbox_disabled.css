@@ -1,0 +1,8 @@
+.checkbox_disabled {
+  opacity: .4;
+  cursor: default;
+}
+
+.checkbox_disabled:hover {
+  opacity: .4;
+}

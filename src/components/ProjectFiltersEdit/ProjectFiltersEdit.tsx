@@ -1,58 +1,72 @@
 import React from 'react';
-import { useForm, Controller } from 'react-hook-form';
 import { useErrorHandler } from 'react-error-boundary';
+import { Controller, useForm } from 'react-hook-form';
+
+import Button from '../Button';
+import Checkbox from '../Checkbox';
 
 type FormPayload = {
-  login: string;
+  ws: boolean;
+  hvac: boolean;
+  es: boolean;
 };
 
 const inputs = [
   {
-    name: 'login',
-    label: 'Login',
-    required: true,
-    autoComplete: 'login',
+    name: 'ws',
+    label: 'WS',
+    type: 'checkbox',
+    required: false,
+  },
+  {
+    name: 'hvac',
+    label: 'HVAC',
+    type: 'checkbox',
+    required: false,
+  },
+  {
+    name: 'es',
+    label: 'HVAC',
+    type: 'checkbox',
+    required: false,
   },
 ];
 
-export default function SearchForm({ searchType }: { searchType: string }) {
-  console.log(searchType);
+export default function ProjectFiltersEdit() {
   const errorHandler = useErrorHandler();
   const { control, handleSubmit } = useForm<FormPayload>({
     defaultValues: {
-      login: '',
+      ws: true,
+      hvac: true,
+      es: true,
     },
   });
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      console.log('>', data);
-      // closePopupEditModule();
+      console.log(data);
     } catch ({ status, data: { reason } }) {
       errorHandler(new Error(`${status}: ${reason}`));
     }
   });
-
   return (
-    <form className="search-form__box" onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       {inputs.map((input) => (
         <Controller
           key={input.name}
           name={input.name as keyof FormPayload}
           control={control}
           render={({ field, fieldState }) => (
-            <input
+            <Checkbox
               {...field}
               {...input}
-              type="text"
-              placeholder="Search"
-              className="input search-form__input"
-              // errorText={fieldState.error?.message}
+              className="input inbox__input"
+              errorText={fieldState.error?.message}
             />
           )}
         />
       ))}
-      <button aria-label="Search" type="submit" className="button search-form__button" />
+      <Button submit isValid className="button_submit" value="Save" />
     </form>
   );
 }

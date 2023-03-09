@@ -64,30 +64,41 @@ export default function Dwmeter({ closePopupEditModule }
   });
 
   return (
-    <>
-      <h2 className="title">New calc dwmeter</h2>
-      <form onSubmit={onSubmit}>
-        {inputs.map((input) => (
-          <Controller
-            key={input.name}
-            name={input.name as keyof FormPayload}
-            rules={{
-              pattern: input.pattern,
-              required: input.required,
-            }}
-            control={control}
-            render={({ field, fieldState }) => (
-              <Input
-                {...field}
-                {...input}
-                className="input inbox__input"
-                errorText={fieldState.error?.message}
-              />
-            )}
-          />
-        ))}
-        <Button submit isValid className="button_submit" value="Save" />
-      </form>
-    </>
+    <div className="m-container">
+      <div className="m-container__main">
+        <h2 className="title">New calc dwmeter</h2>
+        <form onSubmit={onSubmit}>
+          {inputs.map((input) => (
+            <Controller
+              key={input.name}
+              name={input.name as keyof FormPayload}
+              rules={{
+                pattern: input.pattern,
+                required: input.required,
+              }}
+              control={control}
+              render={({ field, fieldState }) => (
+                <Input
+                  {...field}
+                  {...input}
+                  className="input inbox__input"
+                  errorText={fieldState.error?.message}
+                />
+              )}
+            />
+          ))}
+          <Button submit isValid className="button_submit" value="Save" />
+        </form>
+      </div>
+      <div className="m-container__sidebar">
+        <Button isValid className="button_small" value="Status" />
+        <Button isValid className="button_small" value="Calc 1" />
+        <Button isValid className="button_small" value="Calc 2" />
+        <Button isValid className="button_small" value="Calc 3" />
+        <Button isValid className="button_small" value="Template" />
+        <Button isValid className="button_small" value="Export" />
+        <Button isValid className="button_small" value="Share" />
+      </div>
+    </div>
   );
 }

@@ -7,6 +7,7 @@ type OwnProps = {
   label?: string;
   black?: boolean;
   errorText?: string;
+  // value: any;
 };
 
 export type InputProps = OwnProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'pattern'>;
@@ -36,6 +37,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         onChange={onChange}
         type={type}
         value={value}
+
         placeholder={placeholder}
         className={`${className}${errorText ? ' inbox__input_error' : ''}`}
       />

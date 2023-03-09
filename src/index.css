@@ -163,3 +163,13 @@
 @import url(./blocks/list/list.css);
 @import url(./blocks/list/__item/list__item.css);
 @import url(./blocks/list/_line/list_line.css);
+/*!!!*/
+@import url(./blocks/module/module.css);
+@import url(./blocks/module/__main/module__main.css);
+@import url(./blocks/module/__sidebar/module__sidebar.css);
+/*checkbox*/
+@import url(./blocks/checkbox/checkbox.css);
+@import url(./blocks/checkbox/__label/checkbox__label.css);
+@import url(./blocks/checkbox/__input/checkbox__input.css);
+@import url(./blocks/checkbox/__checkmark/checkbox__checkmark.css);
+@import url(./blocks/checkbox/_disabled/checkbox_disabled.css);

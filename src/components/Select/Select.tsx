@@ -1,4 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-empty-pattern */
 import React, { Fragment } from 'react';
 
 import classnames from 'classnames';
@@ -36,7 +39,7 @@ export default function Select<T>({
 
   return (
     <Listbox value={value} onChange={onChange}>
-      <div className="relative inbox">
+      <div className="relative">
         {labelText && <label className={`select-button__label ${errorText ? 'select-button__label_error' : ''}`}>{ labelText }</label>}
         <Listbox.Button className={classnames(
           'select-button',

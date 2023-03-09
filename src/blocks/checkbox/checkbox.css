@@ -1,0 +1,31 @@
+.checkbox {
+  display: flex;
+  position: relative;
+  margin: 20px 0 0;
+  padding: 0;
+  height: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.checkbox:hover {
+  opacity: 0.8;
+}
+
+.checkbox__input:checked ~ .checkbox__checkmark:after {
+  display: block;
+}
+
+.checkbox__input:checked ~ .checkbox__checkmark:before {
+  display: block;
+}
+
+.checkbox__input:disabled ~ .checkbox__checkmark:before {
+  display: block;
+}

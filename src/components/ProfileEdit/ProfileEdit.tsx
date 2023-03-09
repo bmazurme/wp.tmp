@@ -60,6 +60,7 @@ export default function ProfileEdit() {
       errorHandler(new Error(`${status}: ${reason}`));
     }
   });
+
   return (
     <Content>
       <div className="container">

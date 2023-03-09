@@ -1,0 +1,26 @@
+.m-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.m-container__sidebar {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 0 0 30px;
+  box-sizing: border-box;
+  width: 20%;
+  min-width: 200px;
+  /*background-color: azure;*/
+}
+
+.m-container__main {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  min-width: 600px;
+}
