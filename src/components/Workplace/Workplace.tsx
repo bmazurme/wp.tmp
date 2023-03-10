@@ -11,6 +11,7 @@ import Button from '../Button';
 import Popup from '../Popup';
 
 import projects from '../../mock/projects';
+import options from '../../mock/options';
 
 export type ProjectType = {
   id: number;
@@ -42,6 +43,7 @@ const inputs = [
 export default function Workplace() {
   const errorHandler = useErrorHandler();
   const [items, setItems] = useState(projects);
+  const [filter, setFilter] = useState([options[0], options[1], options[2]]);
   const [popupAddProject, setPopupAddProject] = useState(false);
   const [project, setProject] = useState<ProjectType | null>(null);
   const [sidebar, setSidebar] = useState(false);
@@ -96,7 +98,7 @@ export default function Workplace() {
         </div>
         <div className="board__main">
           {project
-            ? <Board project={project} />
+            ? <Board project={project} options={options} filter={filter} setFilter={setFilter} />
             : <div>Tmp</div>}
         </div>
       </div>

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Select from 'react-select';
+import { useForm, Controller } from 'react-hook-form';
 
 import ProjectEdit from '../ProjectEdit';
 import ProjectUsersEdit from '../ProjectUsersEdit';
-import ProjectFiltersEdit from '../ProjectFiltersEdit';
 
 import BoardHeader from '../BoardHeader';
 import Popup from '../Popup';
@@ -10,28 +11,57 @@ import Modules from '../Modules';
 
 import { ProjectType } from '../Workplace';
 
-export default function Board({ project }: { project: ProjectType | null }) {
-  const [popupEditProject, setPopupEditProject] = useState(false);
-  const [popupEditFilter, setPopupEditFilter] = useState(false);
-  const [popupEditUsers, setPopupEditUsers] = useState(false);
+type TypeOption = { label: string, value: string };
 
+export default function Board({
+  project, options, filter, setFilter,
+} : {
+  project: ProjectType | null, options: any, filter: any, setFilter: any,
+}) {
+  const [popupEditProject, setPopupEditProject] = useState(false);
+  const [popupEditUsers, setPopupEditUsers] = useState(false);
+  const [mods, setMods] = useState<string[]>(project?.modules ?? []);
   const openPopupEditProject = () => setPopupEditProject(true);
   const closePopupEditProject = () => setPopupEditProject(false);
-  const openPopupEditFilter = () => setPopupEditFilter(true);
-  const closePopupEditFilter = () => setPopupEditFilter(false);
   const openPopupEditUsers = () => setPopupEditUsers(true);
   const closePopupEditUsers = () => setPopupEditUsers(false);
+
+  const { control } = useForm({
+    defaultValues: {
+      ReactSelect: filter,
+    },
+  });
+
+  const typeOn = (f: unknown) => {
+    const k = f as TypeOption[];
+    const filteredModules = project?.modules
+      .map((a: string) => (k.some((d) => d.label === a)
+        ? a : null)).filter((x) => x);
+    setFilter(f);
+    setMods(filteredModules as string[]);
+  };
+
+  useEffect(() => { typeOn(filter); }, [project]);
 
   return (
     <>
       <BoardHeader project={project} />
-      <h3 className="main__title">
-        <button
-          aria-label="Filter"
-          className="button_filter"
-          type="button"
-          onClick={openPopupEditFilter}
+      <div className="main__title">
+        <Controller
+          name="ReactSelect"
+          control={control}
+          render={({ field }) => (
+            <Select
+              {...field}
+              onChange={(filters) => typeOn(filters)}
+              value={filter}
+              closeMenuOnSelect={false}
+              isMulti
+              options={options}
+            />
+          )}
         />
+
         <button
           aria-label="Users"
           className="button_users"
@@ -44,13 +74,8 @@ export default function Board({ project }: { project: ProjectType | null }) {
           type="button"
           onClick={openPopupEditProject}
         />
-      </h3>
-      <Modules project={project} />
-      <Popup
-        isOpen={popupEditFilter}
-        onClose={closePopupEditFilter}
-        children={(<ProjectFiltersEdit />)}
-      />
+      </div>
+      <Modules modules={mods} />
       <Popup
         isOpen={popupEditUsers}
         onClose={closePopupEditUsers}

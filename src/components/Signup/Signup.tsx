@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useErrorHandler } from 'react-error-boundary';
+
 import useUser from '../../hook/useUser';
 import { useSignUpMutation } from '../../store';
-
 import Logo from '../Logo';
 import Input from '../Input';
 import Button from '../Button';

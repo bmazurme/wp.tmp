@@ -90,7 +90,7 @@ export default function ProfileEdit() {
         <ul className="profile__links">
           <li>
             <NavLink className="profile__link" to={Paths.PROFILE.INDEX}>
-              Назад
+              Back
             </NavLink>
           </li>
         </ul>

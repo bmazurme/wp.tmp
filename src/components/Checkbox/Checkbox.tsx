@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-duplicates
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef } from 'react';
 // eslint-disable-next-line import/no-duplicates
 import { type InputHTMLAttributes } from 'react';
 

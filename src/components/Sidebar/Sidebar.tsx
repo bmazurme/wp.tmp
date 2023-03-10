@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
@@ -19,6 +18,7 @@ export default function Sidebar({
       <div className="sidebar__header">
         {sidebar ? '' : 'My projects'}
         <button
+          aria-label="Open"
           type="button"
           onClick={toggleSidebar}
           className={`sidebar__button${!sidebar ? ' sidebar__button_open' : ''}`}
@@ -28,7 +28,6 @@ export default function Sidebar({
       {sidebar
         ? null
         : (
-          // eslint-disable-next-line react/jsx-no-comment-textnodes
           <ul className="list">
             {items.map((pr: ProjectType) => (
               <li

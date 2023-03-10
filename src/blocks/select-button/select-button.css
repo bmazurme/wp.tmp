@@ -3,12 +3,12 @@
   position: relative;
   text-align: left;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 4px;
   background-color: #f4f4f4;
   border: #f4f4f4 1px solid;
   margin: 5px 0 0;
   padding: 0 20px;
-  height: 46px;
+  height: 40px;
 }
 
 .select-options {

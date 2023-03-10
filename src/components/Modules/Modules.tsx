@@ -2,12 +2,10 @@ import React from 'react';
 
 import Module from '../Module';
 
-import { ProjectType } from '../Workplace';
-
-export default function Board({ project }: { project: ProjectType | null }) {
+export default function Board({ modules }: { modules: string[] }) {
   return (
     <ul className="modules">
-      {project?.modules.map((module) => (<Module key={module} module={module} />))}
+      {modules.map((module) => (<Module key={module} module={module} />))}
     </ul>
   );
 }

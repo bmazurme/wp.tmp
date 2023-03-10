@@ -1,16 +1,21 @@
 .inbox__input {
   background-color: #F4F4F4;
   border: 1px solid #F4F4F4;
-  border-radius: 8px;
+  border-radius: 4px;
   width: 100%;
-  height: 46px;
+  height: 40px;
   margin: 5px 0 0;
-  padding: 0 15px;
+  padding: 0 10px;
   box-sizing: border-box;
 }
 
 .inbox__input_150 {
   max-width: 150px;
+  text-align: center;
+}
+
+.inbox__input_120 {
+  max-width: 120px;
   text-align: center;
 }
 

@@ -3,12 +3,12 @@ import { useErrorHandler } from 'react-error-boundary';
 import { Controller, useForm } from 'react-hook-form';
 
 import Button from '../Button';
-import Checkbox from '../Checkbox';
+import Input from '../Input';
 
 type FormPayload = {
-  ws: boolean;
-  hvac: boolean;
-  es: boolean;
+  ws: string;
+  hvac: string;
+  es: string;
 };
 
 const inputs = [
@@ -17,18 +17,30 @@ const inputs = [
     label: 'WS',
     type: 'checkbox',
     required: false,
+    pattern: {
+      value: /^[a-z0-9_-]{3,15}$/,
+      message: 'Name is invalid',
+    },
   },
   {
     name: 'hvac',
     label: 'HVAC',
     type: 'checkbox',
     required: false,
+    pattern: {
+      value: /^[a-z0-9_-]{3,15}$/,
+      message: 'Name is invalid',
+    },
   },
   {
     name: 'es',
     label: 'HVAC',
     type: 'checkbox',
     required: false,
+    pattern: {
+      value: /^[a-z0-9_-]{3,15}$/,
+      message: 'Name is invalid',
+    },
   },
 ];
 
@@ -36,9 +48,9 @@ export default function ProjectFiltersEdit() {
   const errorHandler = useErrorHandler();
   const { control, handleSubmit } = useForm<FormPayload>({
     defaultValues: {
-      ws: true,
-      hvac: true,
-      es: true,
+      ws: 'true',
+      hvac: 'true',
+      es: 'true',
     },
   });
 
@@ -55,9 +67,13 @@ export default function ProjectFiltersEdit() {
         <Controller
           key={input.name}
           name={input.name as keyof FormPayload}
+          rules={{
+            pattern: input.pattern,
+            required: input.required,
+          }}
           control={control}
           render={({ field, fieldState }) => (
-            <Checkbox
+            <Input
               {...field}
               {...input}
               className="input inbox__input"

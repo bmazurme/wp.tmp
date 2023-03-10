@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { useSignOutMutation } from '../../store';
-
 import ProfileButton from '../ProfileButton';
 
 export default function Navigation({ isOpen, handlerClick }
