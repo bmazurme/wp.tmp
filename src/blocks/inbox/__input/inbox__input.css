@@ -3,7 +3,7 @@
   border: 1px solid #F4F4F4;
   border-radius: 4px;
   width: 100%;
-  height: 40px;
+  height: 38px;
   margin: 5px 0 0;
   padding: 0 10px;
   box-sizing: border-box;
@@ -11,6 +11,11 @@
 
 .inbox__input_150 {
   max-width: 150px;
+  text-align: center;
+}
+
+.inbox__input_110 {
+  max-width: 110px;
   text-align: center;
 }
 

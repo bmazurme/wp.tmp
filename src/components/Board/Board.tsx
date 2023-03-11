@@ -2,11 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import { useForm, Controller } from 'react-hook-form';
 
-import ProjectEdit from '../ProjectEdit';
-import ProjectUsersEdit from '../ProjectUsersEdit';
-
 import BoardHeader from '../BoardHeader';
-import Popup from '../Popup';
 import Modules from '../Modules';
 
 import { ProjectType } from '../Workplace';
@@ -18,14 +14,7 @@ export default function Board({
 } : {
   project: ProjectType | null, options: any, filter: any, setFilter: any,
 }) {
-  const [popupEditProject, setPopupEditProject] = useState(false);
-  const [popupEditUsers, setPopupEditUsers] = useState(false);
   const [mods, setMods] = useState<string[]>(project?.modules ?? []);
-  const openPopupEditProject = () => setPopupEditProject(true);
-  const closePopupEditProject = () => setPopupEditProject(false);
-  const openPopupEditUsers = () => setPopupEditUsers(true);
-  const closePopupEditUsers = () => setPopupEditUsers(false);
-
   const { control } = useForm({
     defaultValues: {
       ReactSelect: filter,
@@ -61,31 +50,8 @@ export default function Board({
             />
           )}
         />
-
-        <button
-          aria-label="Users"
-          className="button_users"
-          type="button"
-          onClick={openPopupEditUsers}
-        />
-        <button
-          aria-label="Menu"
-          className="button_menu"
-          type="button"
-          onClick={openPopupEditProject}
-        />
       </div>
       <Modules modules={mods} />
-      <Popup
-        isOpen={popupEditUsers}
-        onClose={closePopupEditUsers}
-        children={(<ProjectUsersEdit />)}
-      />
-      <Popup
-        isOpen={popupEditProject}
-        onClose={closePopupEditProject}
-        children={(<ProjectEdit />)}
-      />
     </>
   );
 }

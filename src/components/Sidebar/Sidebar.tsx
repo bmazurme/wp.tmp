@@ -16,7 +16,10 @@ export default function Sidebar({
   return (
     <div className="sidebar">
       <div className="sidebar__header">
-        {sidebar ? '' : 'My projects'}
+        <span className={`${sidebar ? 'sidebar__title_hidden' : 'sidebar__title'}`}>
+          {sidebar ? '' : 'My projects'}
+        </span>
+
         <button
           aria-label="Open"
           type="button"

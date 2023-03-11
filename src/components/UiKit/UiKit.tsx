@@ -1,7 +1,12 @@
+/* eslint-disable react/jsx-pascal-case */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import ru from 'date-fns/locale/ru';
 import Select, { StylesConfig } from 'react-select';
@@ -9,6 +14,7 @@ import chroma from 'chroma-js';
 
 import Button from '../Button';
 import Input from '../Input';
+import Checkbox from '../Checkbox';
 import SelectButton from '../Select';
 import { ColourOption } from '../../mock/colourOptions';
 
@@ -103,6 +109,7 @@ const colourStyles: StylesConfig<ColourOption, true> = {
 };
 
 export default function UiKit() {
+  const { control } = useForm();
   const [startDate, setStartDate] = useState(new Date());
   const [select, setSelect] = useState(10);
   const options = [
@@ -110,16 +117,6 @@ export default function UiKit() {
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' },
   ];
-
-  const {
-    register,
-    getValues,
-    formState: { errors },
-  } = useForm({
-    mode: 'onChange',
-  });
-  console.log(errors);
-  const atLeastOne = () => (getValues('test').length ? true : 'Please tell me if this is too hard.');
 
   return (
     <div className="grid grid_two">
@@ -132,7 +129,7 @@ export default function UiKit() {
           selected={startDate}
           dateFormat="dd.MM.yyyy"
           onChange={(date: Date) => setStartDate(date)}
-          customInput={<input className="input inbox__input inbox__input_120" />}
+          customInput={<input className="input inbox__input inbox__input_110" />}
         />
       </div>
       <div className="inbox">
@@ -144,7 +141,7 @@ export default function UiKit() {
           selected={startDate}
           dateFormat="dd.MM.yyyy"
           onChange={(date: Date) => setStartDate(date)}
-          customInput={<input className="input inbox__input inbox__input_120" />}
+          customInput={<input className="input inbox__input inbox__input_110" />}
         />
       </div>
 
@@ -186,21 +183,40 @@ export default function UiKit() {
       <Input className="input inbox__input" label="Input" />
       <Input className="input inbox__input" label="Input" />
 
-      <Button isValid className="button_submit" value="Button" />
-      <Button isValid className="button_submit" value="Button" />
-
       <form>
-        {[1].map((value) => (
-          <input
-            key={value}
-            type="checkbox"
-            value={value}
-            {...register('test', {
-              validate: atLeastOne,
-            })}
-          />
-        ))}
+        <Controller
+          name="example3"
+          render={({ field, fieldState }) => (
+            <Checkbox
+              {...field}
+              defaultChecked
+              label="Checkbox"
+              onChange={(v) => console.log(v)}
+              className=""
+              // errorText={fieldState.error?.message}
+            />
+          )}
+          control={control}
+        />
       </form>
+      <form>
+        <Controller
+          name="example3"
+          render={({ field, fieldState }) => (
+            <Checkbox
+              {...field}
+              defaultChecked
+              label="Checkbox"
+              onChange={(v) => console.log(v)}
+              className=""
+              // errorText={fieldState.error?.message}
+            />
+          )}
+          control={control}
+        />
+      </form>
+      <Button isValid className="button_submit" value="Button" />
+      <Button isValid className="button_submit" value="Button" />
     </div>
   );
 }
