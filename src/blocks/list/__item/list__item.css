@@ -1,4 +1,6 @@
 .list__item {
+  display: flex;
+  justify-content: left;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -6,22 +8,29 @@
   text-align: left;
   letter-spacing: -0.04em;
   margin: 0;
-  padding: 15px 20px;
+  padding: 10px;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
-  display: flex;
   align-items: center;
+  min-height: 40px;
+  transition: .8s ease-out;
 }
 
+.list__item_center {
+  padding: 9px;
+  /* justify-content: center; */
+}
+
+
 .list__item:last-child {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   /* border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; */
 }
 
 .list__item:first-child {
-  padding-top: 15px;
+  padding-top: 10px;
   /* border-top-left-radius: 5px;
   border-top-right-radius: 5px; */
 }

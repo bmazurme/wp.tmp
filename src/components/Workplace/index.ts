@@ -1,4 +1,4 @@
-import Workplace, { ProjectType } from './Workplace';
+import Workplace, { TypeProject } from './Workplace';
 
 export default Workplace;
-export { ProjectType };
+export { TypeProject };

@@ -1,7 +1,6 @@
 import React, { forwardRef, type InputHTMLAttributes } from 'react';
 
 type OwnProps = {
-  // id?: string;
   label?: string;
   errorText?: string;
   className?: string;
@@ -20,7 +19,6 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
     disabled,
     label,
     defaultChecked,
-    // id,
   } = props;
 
   const currentClass = ['checkbox'];

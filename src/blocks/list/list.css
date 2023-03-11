@@ -1,7 +1,7 @@
 .list {
   /*background-color: #f4f4f4;*/
   border: #f4f4f4 1px solid;
-  border-radius: 5px;
+  border-radius: 4px;
   width: 100%;
   margin: 5px 0;
   padding: 0;
@@ -12,4 +12,20 @@
   align-items: center;
   list-style: none;
   overflow: hidden;
+  overflow-y: auto;
+
+  max-height: 300px;
+}
+
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 3px;
+}
+
+.list::-webkit-scrollbar-track {
+  background-color: #fbfbfb;
 }

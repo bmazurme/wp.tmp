@@ -24,7 +24,8 @@
 .main__title {
   display: flex;
   margin: 5px 0;
-  padding: 5px;
+  padding: 0;
+  /* padding: 5px; */
   box-sizing: border-box;
   /* background-color: darkgoldenrod; */
   border: 1px solid var(--background-profile-button);
@@ -92,4 +93,7 @@
   line-height: 18px;
   align-items: center;
   align-self: center;
+  min-width: 50px;
+  max-width: 200px;
+  width: 100%;
 }

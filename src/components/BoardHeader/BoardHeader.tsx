@@ -1,20 +1,33 @@
-import React, { useState } from 'react';
+/* eslint-disable no-shadow */
+import React, { ReactNode, useState } from 'react';
 
 import Popup from '../Popup';
 import SearchForm from '../SearchForm';
 import ProjectEdit from '../ProjectEdit';
 import ProjectUsersEdit from '../ProjectUsersEdit';
+import History from '../History';
+import Help from '../Help';
+import Notification from '../Notification';
 
-import { ProjectType } from '../Workplace';
+import { TypeProject } from '../Workplace';
 
-export default function BoardHeader({ project }: { project: ProjectType | null }) {
+const popups: Record<string, ReactNode> = {
+  help: <Help />,
+  history: <History />,
+  projectEdit: <ProjectEdit />,
+  projectUsersEdit: <ProjectUsersEdit />,
+  notification: <Notification />,
+};
+
+export default function BoardHeader({ project }: { project: TypeProject | null }) {
   const onEditProjectName = (e: any) => console.log(e);
-  const [popupEditProject, setPopupEditProject] = useState(false);
-  const [popupEditUsers, setPopupEditUsers] = useState(false);
-  const openPopupEditProject = () => setPopupEditProject(true);
-  const closePopupEditProject = () => setPopupEditProject(false);
-  const openPopupEditUsers = () => setPopupEditUsers(true);
-  const closePopupEditUsers = () => setPopupEditUsers(false);
+  const [popup, setPopup] = useState(false);
+  const [form, setForm] = useState<string>('help');
+  const openPopup = (name: string) => {
+    setForm(name);
+    setPopup(true);
+  };
+  const closePopup = () => setPopup(false);
 
   return (
     <div className="main__header">
@@ -28,41 +41,36 @@ export default function BoardHeader({ project }: { project: ProjectType | null }
         aria-label="Users"
         className="button_users"
         type="button"
-        onClick={openPopupEditUsers}
+        onClick={() => openPopup('projectUsersEdit')}
       />
       <button
         aria-label="Menu"
         className="button_menu"
         type="button"
-        onClick={openPopupEditProject}
+        onClick={() => openPopup('projectEdit')}
       />
       <button
         aria-label="alarm"
         className="button_alarm"
         type="button"
-        onClick={() => console.log(0)}
+        onClick={() => openPopup('notification')}
       />
       <button
         aria-label="history"
         className="button_history"
         type="button"
-        onClick={() => console.log(0)}
+        onClick={() => openPopup('history')}
       />
       <button
         aria-label="help"
         className="button_help"
         type="button"
-        onClick={() => console.log(0)}
+        onClick={() => openPopup('help')}
       />
       <Popup
-        isOpen={popupEditUsers}
-        onClose={closePopupEditUsers}
-        children={(<ProjectUsersEdit />)}
-      />
-      <Popup
-        isOpen={popupEditProject}
-        onClose={closePopupEditProject}
-        children={(<ProjectEdit />)}
+        isOpen={popup}
+        onClose={closePopup}
+        children={(popups[form])}
       />
     </div>
   );

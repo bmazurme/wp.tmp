@@ -15,7 +15,9 @@ import chroma from 'chroma-js';
 import Button from '../Button';
 import Input from '../Input';
 import Checkbox from '../Checkbox';
+import Switcher from '../Switcher';
 import SelectButton from '../Select';
+
 import { ColourOption } from '../../mock/colourOptions';
 
 registerLocale('ru', ru);
@@ -215,6 +217,10 @@ export default function UiKit() {
           control={control}
         />
       </form>
+
+      <Switcher handlerSwitchClick={() => console.log(1)} value label="Switcher" />
+      <Switcher handlerSwitchClick={() => console.log(1)} value label="Switcher" />
+
       <Button isValid className="button_submit" value="Button" />
       <Button isValid className="button_submit" value="Button" />
     </div>

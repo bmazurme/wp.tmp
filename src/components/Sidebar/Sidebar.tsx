@@ -1,17 +1,19 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import { ProjectType } from '../Workplace';
+import { TypeProject } from '../Workplace';
+
+import List from '../List';
 
 export default function Sidebar({
   openPopupAddProject, openProject, toggleSidebar, sidebar, project, items,
 }: {
   openPopupAddProject: () => void,
-  openProject: (pr: ProjectType) => void,
+  openProject: (pr: TypeProject) => void,
   toggleSidebar: () => void,
   sidebar: boolean,
-  project: ProjectType | null,
-  items: ProjectType[],
+  project: TypeProject | null,
+  items: TypeProject[],
 }) {
   return (
     <div className="sidebar">
@@ -19,7 +21,6 @@ export default function Sidebar({
         <span className={`${sidebar ? 'sidebar__title_hidden' : 'sidebar__title'}`}>
           {sidebar ? '' : 'My projects'}
         </span>
-
         <button
           aria-label="Open"
           type="button"
@@ -28,21 +29,12 @@ export default function Sidebar({
         />
       </div>
       <button type="button" onClick={openPopupAddProject} className="button_add">+</button>
-      {sidebar
-        ? null
-        : (
-          <ul className="list">
-            {items.map((pr: ProjectType) => (
-              <li
-                className={`list__item${pr.id === project?.id ? ' list__item_active' : ''}`}
-                onClick={() => openProject(pr)}
-                key={pr.id}
-              >
-                {pr.name}
-              </li>
-            ))}
-          </ul>
-        )}
+      <List
+        items={items}
+        openProject={openProject}
+        project={project}
+        sidebar={sidebar}
+      />
       <div className="banner">{sidebar ? '' : 'Banner'}</div>
     </div>
   );

@@ -5,14 +5,14 @@ import { useForm, Controller } from 'react-hook-form';
 import BoardHeader from '../BoardHeader';
 import Modules from '../Modules';
 
-import { ProjectType } from '../Workplace';
+import { TypeProject } from '../Workplace';
 
 type TypeOption = { label: string, value: string };
 
 export default function Board({
   project, options, filter, setFilter,
 } : {
-  project: ProjectType | null, options: any, filter: any, setFilter: any,
+  project: TypeProject | null, options: any, filter: any, setFilter: any,
 }) {
   const [mods, setMods] = useState<string[]>(project?.modules ?? []);
   const { control } = useForm({

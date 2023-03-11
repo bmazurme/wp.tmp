@@ -4,8 +4,8 @@
   - [X] Button
   - [ ] ButtonGroup
   - [X] Input
-  - [ ] Checkbox
-  - [ ] Select
+  - [X] Checkbox
+  - [X] Select
   - [X] Datepiker
   - [ ] Accordion
   - [ ] Badge
@@ -48,5 +48,4 @@
   - [ ] Billing
   - [ ] Theme
   - [ ] Project
-  - [ ] Export/import CAD?
   - [ ] Notification email, telegram

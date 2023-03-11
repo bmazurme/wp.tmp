@@ -5,9 +5,10 @@ import { useErrorHandler } from 'react-error-boundary';
 import Input from '../Input';
 import Button from '../Button';
 
+import { ProjectType } from '../Workplace';
+
 type FormPayload = {
   name: string;
-  description: string;
 };
 
 const inputs = [
@@ -21,49 +22,37 @@ const inputs = [
     required: true,
     autoComplete: 'name',
   },
-  {
-    name: 'address',
-    label: 'Address',
-    pattern: {
-      value: /^[a-z0-9_-]{3,15}$/,
-      message: 'Address is invalid',
-    },
-    required: true,
-    autoComplete: 'address',
-  },
-  {
-    name: 'description',
-    label: 'Description',
-    pattern: {
-      value: /^[a-z0-9_-]{3,15}$/,
-      message: 'Description is invalid',
-    },
-    required: true,
-    autoComplete: 'description',
-  },
 ];
 
-export default function ProjectEdit() {
+export default function ProjectAdd({ items, setItems }
+  : { items: ProjectType[], setItems: any }) {
   const errorHandler = useErrorHandler();
   const { control, handleSubmit } = useForm<FormPayload>({
     defaultValues: {
       name: '',
-      description: '',
     },
   });
 
   const onSubmit = handleSubmit(async (data) => {
     try {
       console.log(data);
-      // closePopupEditModule();
+      setItems([{
+        id: items.length + 1,
+        name: data.name,
+        owner: 0,
+        address: '',
+        likes: [],
+        users: [],
+        modules: [],
+      }, ...items]);
     } catch ({ status, data: { reason } }) {
       errorHandler(new Error(`${status}: ${reason}`));
     }
   });
 
   return (
-    <div>
-      <h2 className="title">Edit project</h2>
+    <>
+      <h2 className="title">New project</h2>
       <form onSubmit={onSubmit}>
         {inputs.map((input) => (
           <Controller
@@ -84,8 +73,8 @@ export default function ProjectEdit() {
             )}
           />
         ))}
-        <Button submit isValid className="button_submit" value="Save" />
+        <Button submit isValid className="button_submit" value="Create" />
       </form>
-    </div>
+    </>
   );
 }
