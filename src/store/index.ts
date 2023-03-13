@@ -6,6 +6,7 @@ import { createBrowserHistory, createMemoryHistory } from 'history';
 
 import { authApi, usersApi, moviesApi } from './api';
 import userReducer from './slices/userSlice';
+import projectReducer from './slices/projectSlice';
 import { isServer } from '../utils';
 
 export * from './api/authApi/endpoints';
@@ -28,6 +29,7 @@ export const store = configureStore({
     router: routerReducer,
     // Add the generated reducer as a specific top-level slice
     user: userReducer,
+    project: projectReducer,
     [authApi.reducerPath]: authApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
     [moviesApi.reducerPath]: moviesApi.reducer,

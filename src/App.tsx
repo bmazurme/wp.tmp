@@ -8,9 +8,6 @@ import AboutPage from './pages/About';
 import ProfilePage from './pages/Profile';
 import ProfileEditPage from './pages/ProfileEdit';
 
-import ProjectPage from './pages/Project';
-import ProjectEditPage from './pages/ProjectEdit';
-
 import SigninPage from './pages/SignIn';
 import SignupPage from './pages/Signup';
 import SignupConfirmPage from './pages/SignupConfirm';
@@ -39,9 +36,6 @@ export default function App() {
     <ThemeContext.Provider value={providerValue}>
       <Routes>
         <Route index element={(<WorkplacePage />)} />
-
-        <Route path={Paths.PROJECT.INDEX} element={(<ProjectPage />)} />
-        <Route path={Paths.PROJECT.EDIT} element={(<ProjectEditPage />)} />
 
         <Route path={Paths.SIGN.IN} element={(<SigninPage />)} />
         <Route path={Paths.SIGN.UP} element={(<SignupPage />)} />

@@ -5,7 +5,8 @@ import { useErrorHandler } from 'react-error-boundary';
 import Input from '../Input';
 import Button from '../Button';
 
-import { ProjectType } from '../Workplace';
+import { TypeProject } from '../Workplace';
+import { store } from '../../store';
 
 type FormPayload = {
   name: string;
@@ -24,8 +25,7 @@ const inputs = [
   },
 ];
 
-export default function ProjectAdd({ items, setItems }
-  : { items: ProjectType[], setItems: any }) {
+export default function ProjectAdd({ items }: { items: TypeProject[] }) {
   const errorHandler = useErrorHandler();
   const { control, handleSubmit } = useForm<FormPayload>({
     defaultValues: {
@@ -33,10 +33,12 @@ export default function ProjectAdd({ items, setItems }
     },
   });
 
+  const addProject = (arr: TypeProject[]) => store.dispatch({ type: 'project/setProjects', payload: arr });
+
   const onSubmit = handleSubmit(async (data) => {
     try {
       console.log(data);
-      setItems([{
+      addProject([{
         id: items.length + 1,
         name: data.name,
         owner: 0,

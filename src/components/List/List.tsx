@@ -4,11 +4,11 @@ import React from 'react';
 import { TypeProject } from '../Workplace';
 
 export default function List({
-  openProject, project, items, sidebar,
+  openProject, item, items, sidebar,
 }
 : {
   openProject: (pr: TypeProject) => void,
-  project: TypeProject | null,
+  item: TypeProject | null,
   items: TypeProject[],
   sidebar: boolean,
 }) {
@@ -16,13 +16,13 @@ export default function List({
     <ul className="list">
       {items.map((pr: TypeProject) => (
         <li
-          className={`list__item${pr.id === project?.id
+          className={`list__item${pr.id === item?.id
             ? ' list__item_active'
             : ''}${sidebar ? ' list__item_center' : ''}`}
           onClick={() => openProject(pr)}
           key={pr.id}
         >
-          {sidebar ? pr.name[0] : pr.name }
+          <span className={`item-sidebar${sidebar ? '' : ' item-sidebar_open'}`}>{sidebar ? pr.name[0] : pr.name }</span>
         </li>
       ))}
     </ul>

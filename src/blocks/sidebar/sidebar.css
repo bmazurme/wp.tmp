@@ -78,3 +78,19 @@
   right: 4px;
   transform: rotate(0deg);
 }
+
+.item-sidebar {
+  /*transition: 0.4s ease-out;*/
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.item-sidebar_open {
+  transition: 0.4s ease-out;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}

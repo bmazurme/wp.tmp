@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import Select from 'react-select';
 import { useForm, Controller } from 'react-hook-form';
+import { useSelector } from 'react-redux';
+import Select from 'react-select';
 
 import BoardHeader from '../BoardHeader';
 import Modules from '../Modules';
-
-import { TypeProject } from '../Workplace';
+import makeDataSelector from '../../store/makeDataSelector';
+import options from '../../mock/options';
 
 type TypeOption = { label: string, value: string };
 
-export default function Board({
-  project, options, filter, setFilter,
-} : {
-  project: TypeProject | null, options: any, filter: any, setFilter: any,
-}) {
+const projectSelector = makeDataSelector('project');
+
+export default function Board() {
+  const [filter, setFilter] = useState<TypeOption[]>([options[0], options[1], options[2]]);
+  const { project } = useSelector(projectSelector);
   const [mods, setMods] = useState<string[]>(project?.modules ?? []);
   const { control } = useForm({
     defaultValues: {
@@ -26,7 +27,7 @@ export default function Board({
     const filteredModules = project?.modules
       .map((a: string) => (k.some((d) => d.label === a)
         ? a : null)).filter((x) => x);
-    setFilter(f);
+    setFilter(f as TypeOption[]);
     setMods(filteredModules as string[]);
   };
 

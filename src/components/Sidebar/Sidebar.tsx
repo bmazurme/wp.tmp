@@ -1,20 +1,23 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import { TypeProject } from '../Workplace';
-
 import List from '../List';
+import makeDataSelector from '../../store/makeDataSelector';
+import { store } from '../../store';
+import Popup from '../Popup';
+import ProjectAdd from '../ProjectAdd';
 
-export default function Sidebar({
-  openPopupAddProject, openProject, toggleSidebar, sidebar, project, items,
-}: {
-  openPopupAddProject: () => void,
-  openProject: (pr: TypeProject) => void,
-  toggleSidebar: () => void,
-  sidebar: boolean,
-  project: TypeProject | null,
-  items: TypeProject[],
-}) {
+const projectSelector = makeDataSelector('project');
+
+export default function Sidebar({ toggleSidebar, sidebar }: {
+  toggleSidebar: () => void, sidebar: boolean }) {
+  const { project, projects } = useSelector(projectSelector);
+  const [popupAddProject, setPopupAddProject] = useState(false);
+  const openPopupAddProject = () => setPopupAddProject(true);
+  const closePopupAddProject = () => setPopupAddProject(false);
+  const openProject = (current: TypeProject) => store.dispatch({ type: 'project/setProject', payload: current });
+
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -28,14 +31,21 @@ export default function Sidebar({
           className={`sidebar__button${!sidebar ? ' sidebar__button_open' : ''}`}
         />
       </div>
-      <button type="button" onClick={openPopupAddProject} className="button_add">+</button>
+      <button type="button" onClick={openPopupAddProject} className="button_add">
+        {sidebar ? '+' : 'Add projects'}
+      </button>
       <List
-        items={items}
+        items={projects}
+        item={project}
         openProject={openProject}
-        project={project}
         sidebar={sidebar}
       />
       <div className="banner">{sidebar ? '' : 'Banner'}</div>
+      <Popup
+        isOpen={popupAddProject}
+        onClose={closePopupAddProject}
+        children={(<ProjectAdd items={projects} />)}
+      />
     </div>
   );
 }

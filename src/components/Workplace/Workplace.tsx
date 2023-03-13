@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import makeDataSelector from '../../store/makeDataSelector';
 
 import Sidebar from '../Sidebar';
 import Board from '../Board';
-import Popup from '../Popup';
-import ProjectAdd from '../ProjectAdd';
 
-import projects from '../../mock/projects';
-import options from '../../mock/options';
+import { store } from '../../store';
+import pr from '../../mock/projects';
 
 export type TypeProject = {
   id: number;
@@ -18,50 +18,28 @@ export type TypeProject = {
   modules: string[];
 };
 
+const projectSelector = makeDataSelector('project');
+
 export default function Workplace() {
-  const [items, setItems] = useState(projects);
-  const [filter, setFilter] = useState([options[0], options[1], options[2]]);
-  const [popupAddProject, setPopupAddProject] = useState(false);
-  const [project, setProject] = useState<TypeProject | null>(null);
+  const { project } = useSelector(projectSelector);
   const [sidebar, setSidebar] = useState(false);
   const toggleSidebar = () => setSidebar(!sidebar);
-  const openProject = (currentProject: TypeProject) => {
-    setProject(currentProject);
-  };
-  const openPopupAddProject = () => setPopupAddProject(true);
-  const closePopupAddProject = () => setPopupAddProject(false);
+
+  useEffect(() => {
+    store.dispatch({ type: 'project/setProject', payload: project });
+    store.dispatch({ type: 'project/setProjects', payload: pr });
+  }, []);
 
   return (
     <section>
       <div className="board">
         <div className={`board__sidebar${sidebar ? ' board__sidebar_hidden' : ''}`}>
-          <Sidebar
-            openPopupAddProject={openPopupAddProject}
-            openProject={openProject}
-            sidebar={sidebar}
-            toggleSidebar={toggleSidebar}
-            project={project}
-            items={items}
-          />
+          <Sidebar sidebar={sidebar} toggleSidebar={toggleSidebar} />
         </div>
         <div className="board__main">
-          {project
-            ? (
-              <Board
-                project={project}
-                options={options}
-                filter={filter}
-                setFilter={setFilter}
-              />
-            )
-            : <div>Tmp</div>}
+          {project ? (<Board />) : <div>Tmp</div>}
         </div>
       </div>
-      <Popup
-        isOpen={popupAddProject}
-        onClose={closePopupAddProject}
-        children={(<ProjectAdd items={items} setItems={setItems} />)}
-      />
     </section>
   );
 }
