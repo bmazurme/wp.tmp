@@ -1,14 +1,17 @@
 import React from 'react';
 
+import List from '../List';
+import history from '../../mock/history';
+
 export default function History() {
   return (
     <>
       <h2 className="title">History</h2>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
+      <List
+        item={null}
+        items={history}
+        openProject={(e) => console.log(e)}
+      />
     </>
   );
 }

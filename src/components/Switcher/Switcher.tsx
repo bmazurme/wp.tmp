@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-export default function Switcher({ handlerSwitchClick, value, label }:
-  { handlerSwitchClick: () => void, value: boolean, label?: string }) {
+export default function Switcher({ handlerSwitchClick, value, label }
+  : { handlerSwitchClick: () => void, value: boolean, label?: string }) {
   const [on, setOn] = useState(value ?? false);
   const onClickHandler = () => {
     setOn(!on);

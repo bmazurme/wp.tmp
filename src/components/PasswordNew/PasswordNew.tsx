@@ -78,7 +78,7 @@ export default function PasswordNew() {
         <ul className="profile__links">
           <li>
             <NavLink className="profile__link" to={Paths.PROFILE.INDEX}>
-              Назад
+              Back
             </NavLink>
           </li>
         </ul>

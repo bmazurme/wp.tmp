@@ -51,15 +51,15 @@
 }
 
 .sidebar__button {
-  height: 26px;
-  width: 26px;
+  height: 24px;
+  width: 24px;
   display: flex;
   position: absolute;
   color: #ebebeb;
   border-radius: 5px;
   font-weight: bold;
   right: 1px;
-  top: 7px;
+  top: 8px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -71,7 +71,14 @@
   -webkit-mask: url(../../images/arrow_icon.svg) no-repeat center;
   mask: url(../../images/arrow_icon.svg) no-repeat center;
   transform: rotate(180deg);
+  opacity: 1;
   /* border: 1px solid #ebebeb; */
+}
+.sidebar__button:hover {
+  opacity: 0.8;
+  height: 26px;
+  width: 26px;
+  top: 7px;
 }
 
 .sidebar__button_open {

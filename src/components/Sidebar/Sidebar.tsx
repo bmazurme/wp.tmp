@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { TypeProject } from '../Workplace';
-import List from '../List';
 import makeDataSelector from '../../store/makeDataSelector';
 import { store } from '../../store';
+
 import Popup from '../Popup';
+import List from '../List';
 import ProjectAdd from '../ProjectAdd';
+
+import { TypeProject } from '../Workplace';
 
 const projectSelector = makeDataSelector('project');
 

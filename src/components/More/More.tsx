@@ -4,7 +4,7 @@ export default function More({ handleMoreClick }: { handleMoreClick: () => void 
   return (
     <div className="more">
       <button onClick={handleMoreClick} type="button" className="button button_more">
-        Еще
+        More
       </button>
     </div>
   );

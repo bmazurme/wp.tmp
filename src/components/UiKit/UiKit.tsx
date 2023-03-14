@@ -17,6 +17,7 @@ import Input from '../Input';
 import Checkbox from '../Checkbox';
 import Switcher from '../Switcher';
 import SelectButton from '../Select';
+import Map from '../Map';
 
 import { ColourOption } from '../../mock/colourOptions';
 
@@ -217,6 +218,9 @@ export default function UiKit() {
           control={control}
         />
       </form>
+
+      <Map />
+      <Map />
 
       <Switcher handlerSwitchClick={() => console.log(1)} value label="Switcher" />
       <Switcher handlerSwitchClick={() => console.log(1)} value label="Switcher" />

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+
 import makeDataSelector from '../../store/makeDataSelector';
+import { store } from '../../store';
 
 import Sidebar from '../Sidebar';
 import Board from '../Board';
 
-import { store } from '../../store';
 import pr from '../../mock/projects';
 
 export type TypeProject = {
