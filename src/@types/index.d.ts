@@ -15,3 +15,13 @@ type User = {
   avatar?: string;
   password?: string;
 };
+
+type TypeProject = {
+  id: number;
+  name: string;
+  owner: number;
+  address: string;
+  likes: never[];
+  users: number[];
+  modules: string[];
+};

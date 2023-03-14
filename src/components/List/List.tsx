@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import { TypeProject } from '../Workplace';
 
 export default function List({
   openProject, item, items, sidebar,
 }: {
-  openProject: (pr: TypeProject | Record<string, string>) => void,
+  openProject:any,
   item: TypeProject | Record<string, string> | null,
   items: TypeProject[] | Record<string, string>[],
   sidebar?: boolean,

@@ -1,15 +1,15 @@
 const notification = [
   {
-    id: '0',
-    name: 'Notification 1',
+    title: 'Notification 1',
+    content: 'Notification 1 - bla-bla-bla...',
   },
   {
-    id: '1',
-    name: 'Notification 2',
+    title: 'Notification 2',
+    content: 'Notification 2 - bla-bla-bla...',
   },
   {
-    id: '2',
-    name: 'Notification 3',
+    title: 'Notification 3',
+    content: 'Notification 3 - bla-bla-bla...',
   },
 ];
 

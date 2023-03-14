@@ -1,4 +1,3 @@
-import Workplace, { TypeProject } from './Workplace';
+import Workplace from './Workplace';
 
 export default Workplace;
-export { TypeProject };

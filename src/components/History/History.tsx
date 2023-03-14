@@ -10,7 +10,7 @@ export default function History() {
       <List
         item={null}
         items={history}
-        openProject={(e) => console.log(e)}
+        openProject={(e: any) => console.log(e)}
       />
     </>
   );

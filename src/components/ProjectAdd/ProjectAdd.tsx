@@ -5,7 +5,6 @@ import { useErrorHandler } from 'react-error-boundary';
 import Input from '../Input';
 import Button from '../Button';
 
-import { TypeProject } from '../Workplace';
 import { store } from '../../store';
 
 type FormPayload = {

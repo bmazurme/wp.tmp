@@ -1,0 +1,8 @@
+.accordion__content {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  font-size: 14px;
+  opacity: 1;
+  color: var(--color);
+}

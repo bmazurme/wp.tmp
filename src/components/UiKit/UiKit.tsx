@@ -18,10 +18,29 @@ import Checkbox from '../Checkbox';
 import Switcher from '../Switcher';
 import SelectButton from '../Select';
 import Map from '../Map';
+import Accordion from '../Accordion';
 
 import { ColourOption } from '../../mock/colourOptions';
 
 registerLocale('ru', ru);
+
+const mockData = [
+  {
+    data: false,
+    title: 'Title1',
+    content: 'Content 1 - bla-bla-bla...',
+  },
+  {
+    data: false,
+    title: 'Title2',
+    content: 'Content 2 - bla-bla-bla...',
+  },
+  {
+    data: false,
+    title: 'Title3',
+    content: 'Content 3 - bla-bla-bla...',
+  },
+];
 
 export const colourOptions: readonly ColourOption[] = [
   {
@@ -221,6 +240,9 @@ export default function UiKit() {
 
       <Map />
       <Map />
+
+      <Accordion data={[...mockData]} />
+      <Accordion data={[...mockData]} />
 
       <Switcher handlerSwitchClick={() => console.log(1)} value label="Switcher" />
       <Switcher handlerSwitchClick={() => console.log(1)} value label="Switcher" />

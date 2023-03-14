@@ -1,0 +1,28 @@
+.accordion__container {
+  cursor: pointer;
+  border-bottom: solid 1px var(--border-color);
+  opacity: 0.8;
+}
+.accordion__container:hover {
+  opacity: 1;
+}
+
+.accordion__container:last-child {
+  cursor: pointer;
+  border-bottom: none;
+}
+
+.accordion__container_opened {
+  background-color: var(--background-container);
+  min-height: 120px;
+}
+
+.accordion__container:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.accordion__container:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}

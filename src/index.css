@@ -175,3 +175,7 @@
 @import url(./blocks/checkbox/_disabled/checkbox_disabled.css);
 
 @import url(./blocks/grid/grid.css);
+
+@import url(./blocks/accordion/accordion.css);
+@import url(./blocks/accordion/__container/accordion__container.css);
+@import url(./blocks/accordion/__content/accordion__content.css);

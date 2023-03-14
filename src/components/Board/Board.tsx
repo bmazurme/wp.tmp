@@ -26,7 +26,7 @@ export default function Board() {
     const k = f as TypeOption[];
     const filteredModules = project?.modules
       .map((a: string) => (k.some((d) => d.label === a)
-        ? a : null)).filter((x: string) => x);
+        ? a : null)).filter((x: string | null) => x);
     setFilter(f as TypeOption[]);
     setMods(filteredModules as string[]);
   };

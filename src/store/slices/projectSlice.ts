@@ -1,5 +1,4 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { TypeProject } from '../../components/Workplace';
 
 type TypeProjects = { project: TypeProject | null, projects: TypeProject[] };
 

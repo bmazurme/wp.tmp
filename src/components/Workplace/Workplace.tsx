@@ -1,30 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
-import makeDataSelector from '../../store/makeDataSelector';
-import { store } from '../../store';
 
 import Sidebar from '../Sidebar';
 import Board from '../Board';
 
-import pr from '../../mock/projects';
+import makeDataSelector from '../../store/makeDataSelector';
+import { store } from '../../store';
 
-export type TypeProject = {
-  id: number;
-  name: string;
-  owner: number;
-  address: string;
-  likes: never[];
-  users: number[];
-  modules: string[];
-};
+import pr from '../../mock/projects';
 
 const projectSelector = makeDataSelector('project');
 
 export default function Workplace() {
   const { project } = useSelector(projectSelector);
-  const [sidebar, setSidebar] = useState(false);
-  const toggleSidebar = () => setSidebar(!sidebar);
 
   useEffect(() => {
     store.dispatch({ type: 'project/setProject', payload: project });
@@ -34,8 +22,8 @@ export default function Workplace() {
   return (
     <section>
       <div className="board">
-        <div className={`board__sidebar${sidebar ? ' board__sidebar_hidden' : ''}`}>
-          <Sidebar sidebar={sidebar} toggleSidebar={toggleSidebar} />
+        <div className="board__sidebar">
+          <Sidebar />
         </div>
         <div className="board__main">
           {project ? (<Board />) : <div>Tmp</div>}
