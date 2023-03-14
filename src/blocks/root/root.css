@@ -5,7 +5,10 @@ html {
   --color: #000;
   --color-link: #000;
   --background-profile-button: #fff;
-  --border-color: #5a5a5a;
+  /* --border-color: #5a5a5a; */
+  --border-color: #bfbfbf;
+  --background-card: #fff;
+  --background-cards: #f4f4f4;
 }
 
 html[data-theme='dark'] {
@@ -16,6 +19,8 @@ html[data-theme='dark'] {
   --color-link: #bfbfbf;
   --background-profile-button: #bfbfbf;
   --border-color: #5a5a5a;
+  --background-card: #323232;
+  --background-cards: #222222;
 }
 
 .root {

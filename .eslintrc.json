@@ -57,6 +57,9 @@
               "ts": "never"
             }
           ]
+    },
+    "globals": {
+        "TypeProject": "readonly"
     }
     
     // "import/extensions": ["never"]

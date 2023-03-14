@@ -179,3 +179,5 @@
 @import url(./blocks/accordion/accordion.css);
 @import url(./blocks/accordion/__container/accordion__container.css);
 @import url(./blocks/accordion/__content/accordion__content.css);
+
+@import url(./blocks/chip/chip.css);

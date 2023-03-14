@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import Sidebar from '../Sidebar';
 import Board from '../Board';
+import Cards from '../Cards';
 
 import makeDataSelector from '../../store/makeDataSelector';
 import { store } from '../../store';
@@ -26,7 +27,7 @@ export default function Workplace() {
           <Sidebar />
         </div>
         <div className="board__main">
-          {project ? (<Board />) : <div>Tmp</div>}
+          {project ? (<Board />) : <Cards />}
         </div>
       </div>
     </section>

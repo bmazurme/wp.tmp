@@ -1,6 +1,6 @@
 .list {
   /*background-color: #f4f4f4;*/
-  border: #f4f4f4 1px solid;
+  border: var(--border-color) 1px solid;
   border-radius: 4px;
   width: 100%;
   margin: 5px 0;

@@ -19,6 +19,7 @@ import Switcher from '../Switcher';
 import SelectButton from '../Select';
 import Map from '../Map';
 import Accordion from '../Accordion';
+import Chip from '../Chip';
 
 import { ColourOption } from '../../mock/colourOptions';
 
@@ -243,6 +244,9 @@ export default function UiKit() {
 
       <Accordion data={[...mockData]} />
       <Accordion data={[...mockData]} />
+
+      <Chip label="Chip" />
+      <Chip label="Chip" />
 
       <Switcher handlerSwitchClick={() => console.log(1)} value label="Switcher" />
       <Switcher handlerSwitchClick={() => console.log(1)} value label="Switcher" />

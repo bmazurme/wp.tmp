@@ -13,8 +13,8 @@ type TypeOption = { label: string, value: string };
 const projectSelector = makeDataSelector('project');
 
 export default function Board() {
-  const [filter, setFilter] = useState<TypeOption[]>([options[0], options[1], options[2]]);
   const { project } = useSelector(projectSelector);
+  const [filter, setFilter] = useState<TypeOption[]>([options[0], options[1], options[2]]);
   const [mods, setMods] = useState<string[]>(project?.modules ?? []);
   const { control } = useForm({
     defaultValues: {

@@ -1,0 +1,24 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: var(--background-card);
+  border-radius: 4px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.card__title {
+  display: flex;
+  margin: 5px;
+  padding: 0;
+  font-size: 14px;
+}
+
+.card__modules {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 0;
+  font-size: 12px;
+}

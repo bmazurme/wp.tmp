@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Select, { StylesConfig } from 'react-select';
 import chroma from 'chroma-js';
 
+import Chip from '../Chip';
+
 import { ColourOption, colourOptions } from '../../mock/colourOptions';
 import Dwmeter from '../calc/Dwmeter';
 import Popup from '../Popup';
@@ -83,8 +85,7 @@ export default function Module({ module }: { module: string }) {
           options={colourOptions}
           styles={colourStyles}
         />
-
-        <h5 className="module__name">{module}</h5>
+        <Chip label={module} />
         <span className="module__name">result</span>
         <span className="module__name">tmp</span>
         <button
