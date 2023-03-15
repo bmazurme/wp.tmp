@@ -85,9 +85,7 @@ export default function Module({ module }: { module: string }) {
           options={colourOptions}
           styles={colourStyles}
         />
-        <Chip label={module} />
-        <span className="module__name">result</span>
-        <span className="module__name">tmp</span>
+        <Chip label={module} className="tag" />
         <button
           aria-label="Menu"
           className="button_menu"

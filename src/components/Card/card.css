@@ -6,6 +6,13 @@
   border-radius: 4px;
   padding: 5px;
   box-sizing: border-box;
+  opacity: 0.8;
+  transition: 0.4s ease-out;
+}
+
+.card:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .card__title {
@@ -15,10 +22,25 @@
   font-size: 14px;
 }
 
-.card__modules {
+.card__tags {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 5px;
   padding: 0;
+  box-sizing: border-box;
   font-size: 12px;
+}
+
+.card__tag {
+  display: flex;
+  margin: 0 5px;
+  padding: 0;
+}
+
+.card__tag:first-child {
+  margin-left: 0;
+}
+
+.card__tag:last-child {
+  margin-right: 0;
 }
