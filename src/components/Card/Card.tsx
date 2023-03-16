@@ -2,8 +2,6 @@ import React from 'react';
 
 import Chip from '../Chip';
 
-import './card.css';
-
 export default function Card({ card }: { card: TypeProject }) {
   return (
     <li className="card">

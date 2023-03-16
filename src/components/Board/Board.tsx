@@ -6,9 +6,7 @@ import Select from 'react-select';
 import BoardHeader from '../BoardHeader';
 import Modules from '../Modules';
 import makeDataSelector from '../../store/makeDataSelector';
-import options from '../../mock/options';
-
-type TypeOption = { label: string, value: string };
+import options, { TypeOption } from '../../mock/options';
 
 const projectSelector = makeDataSelector('project');
 

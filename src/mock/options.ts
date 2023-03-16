@@ -1,3 +1,4 @@
+type TypeOption = { label: string, value: string };
 const options = [
   {
     value: 'ws', label: 'WS',
@@ -11,3 +12,4 @@ const options = [
 ];
 
 export default options;
+export { TypeOption };

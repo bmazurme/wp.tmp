@@ -4,20 +4,21 @@ import { useSelector } from 'react-redux';
 import makeDataSelector from '../../store/makeDataSelector';
 import { store } from '../../store';
 
-import ProjectAdd from '../ProjectAdd';
-import Popup from '../Popup';
+import ButtonAdd from '../ButtonAdd';
 import List from '../List';
+import Banner from '../Banner';
 
 const projectSelector = makeDataSelector('project');
 
 export default function Sidebar() {
-  const [sidebar, setSidebar] = useState(false);
-  const toggleSidebar = () => setSidebar(!sidebar);
+  const [sidebar, setSidebar] = useState(localStorage.getItem('wp-sidebar') === 'true');
   const { project, projects } = useSelector(projectSelector);
-  const [popupAddProject, setPopupAddProject] = useState(false);
-  const openPopupAddProject = () => setPopupAddProject(true);
-  const closePopupAddProject = () => setPopupAddProject(false);
   const openProject = (current: TypeProject) => store.dispatch({ type: 'project/setProject', payload: current });
+
+  const toggleSidebar = () => {
+    setSidebar(!sidebar);
+    localStorage.setItem('wp-sidebar', !sidebar ? 'true' : 'false');
+  };
 
   return (
     <div className={`sidebar${sidebar ? ' sidebar_hidden' : ''}`}>
@@ -32,21 +33,14 @@ export default function Sidebar() {
           className={`sidebar__button${!sidebar ? ' sidebar__button_open' : ''}`}
         />
       </div>
-      <button type="button" onClick={openPopupAddProject} className={`button_add${sidebar ? ' button_hidden' : ''}`}>
-        {sidebar ? '+' : 'Add'}
-      </button>
+      <ButtonAdd sidebar={sidebar} projects={projects} />
       <List
         items={projects}
         item={project}
         openProject={openProject}
         sidebar={sidebar}
       />
-      <div className="banner">{sidebar ? '' : 'Banner'}</div>
-      <Popup
-        isOpen={popupAddProject}
-        onClose={closePopupAddProject}
-        children={(<ProjectAdd items={projects} />)}
-      />
+      <Banner sidebar={sidebar} />
     </div>
   );
 }

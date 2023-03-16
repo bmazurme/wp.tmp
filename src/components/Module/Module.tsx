@@ -6,7 +6,7 @@ import chroma from 'chroma-js';
 import Chip from '../Chip';
 
 import { ColourOption, colourOptions } from '../../mock/colourOptions';
-import Dwmeter from '../calc/Dwmeter';
+import Ws from '../../calc/Ws';
 import Popup from '../Popup';
 
 const colourStyles: StylesConfig<ColourOption, true> = {
@@ -64,8 +64,15 @@ const colourStyles: StylesConfig<ColourOption, true> = {
   }),
 };
 
+// import { lazily } from 'react-lazily';
+// const { MyComponent } = lazily(() => import("../path/to/components.js"));
+// const { MyComponent, MyOtherComponent, SomeOtherComponent } = lazily(
+//   () => import("../path/to/components.js")
+// );
+
 export default function Module({ module }: { module: string }) {
   const [popupEditModule, setPopupEditModule] = useState(false);
+
   const openPopupEditModule = (e: any) => {
     e.stopPropagation();
     setPopupEditModule(true);
@@ -87,16 +94,16 @@ export default function Module({ module }: { module: string }) {
         />
         <Chip label={module} className="tag" />
         <button
+          type="button"
           aria-label="Menu"
           className="button_square button_menu"
-          type="button"
           onClick={openPopupEditModule}
         />
       </li>
       <Popup
         isOpen={popupEditModule}
         onClose={closePopupEditModule}
-        children={(<Dwmeter closePopupEditModule={closePopupEditModule} />)}
+        children={<Ws closePopupEditModule={closePopupEditModule} />}
       />
     </>
   );

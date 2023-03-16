@@ -2,8 +2,8 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useErrorHandler } from 'react-error-boundary';
 
-import Input from '../Input';
-import Button from '../Button';
+import Input from '../components/Input';
+import Button from '../components/Button';
 
 type FormPayload = {
   name: string;
@@ -44,13 +44,15 @@ const inputs = [
   },
 ];
 
-export default function Dwmeter({ closePopupEditModule }
+export default function Ws({ closePopupEditModule }
   : { closePopupEditModule: () => void }) {
   const errorHandler = useErrorHandler();
 
   const { control, handleSubmit } = useForm<FormPayload>({
     defaultValues: {
       name: '',
+      flow: 0,
+      resistance: 0,
     },
   });
 
@@ -67,7 +69,7 @@ export default function Dwmeter({ closePopupEditModule }
   return (
     <div className="m-container">
       <div className="m-container__main">
-        <h2 className="title">New calc dwmeter</h2>
+        <h2 className="title">WS</h2>
         <form onSubmit={onSubmit}>
           {inputs.map((input) => (
             <Controller

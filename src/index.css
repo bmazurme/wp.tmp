@@ -78,6 +78,7 @@
 @import url(./blocks/movie-card/__detail/movie-card__detail.css);
 /* button */
 @import url(./blocks/button/button.css);
+@import url(./blocks/button/_square/button_square.css);
 @import url(./blocks/button/_add/button_add.css);
 @import url(./blocks/button/_like/button_like.css);
 @import url(./blocks/button/_dislike/button_dislike.css);
@@ -183,3 +184,7 @@
 @import url(./blocks/chip/chip.css);
 
 @import url(./blocks/tag/tag.css);
+
+@import url(./blocks/cards/cards.css);
+@import url(./blocks/card/card.css);
+

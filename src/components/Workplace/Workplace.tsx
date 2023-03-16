@@ -8,7 +8,7 @@ import Cards from '../Cards';
 import makeDataSelector from '../../store/makeDataSelector';
 import { store } from '../../store';
 
-import pr from '../../mock/projects';
+import projects from '../../mock/projects';
 
 const projectSelector = makeDataSelector('project');
 
@@ -17,7 +17,7 @@ export default function Workplace() {
 
   useEffect(() => {
     store.dispatch({ type: 'project/setProject', payload: project });
-    store.dispatch({ type: 'project/setProjects', payload: pr });
+    store.dispatch({ type: 'project/setProjects', payload: projects });
   }, []);
 
   return (

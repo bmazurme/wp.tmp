@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { useSignOutMutation } from '../../store';
 import ProfileButton from '../ProfileButton';
 
-export default function Navigation({ isOpen, handlerClick }
-  : { isOpen: boolean, handlerClick: () => void }) {
+export default function Navigation() {
+  const [isOpen, setIsOpen] = useState(false);
+  const handlerClick = () => setIsOpen(!isOpen);
   const [signOut] = useSignOutMutation();
   const logOut = async () => {
     await signOut();
@@ -25,9 +26,9 @@ export default function Navigation({ isOpen, handlerClick }
         </ul>
       </div>
       <button
-        onClick={handlerClick}
         type="button"
         aria-label="Open"
+        onClick={handlerClick}
         className={`button navigation__button${isOpen ? ' navigation__button_open' : ''}`}
       />
     </>
