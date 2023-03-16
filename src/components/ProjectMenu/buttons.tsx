@@ -15,27 +15,27 @@ export type TypeButton = {
 const buttons: TypeButton[] = [
   {
     ariaLabel: 'Users',
-    className: 'button_users',
+    className: 'button_square button_users',
     node: <ProjectUsersEdit />,
   },
   {
     ariaLabel: 'Menu',
-    className: 'button_menu',
+    className: 'button_square button_menu',
     node: <ProjectEdit />,
   },
   {
     ariaLabel: 'Notification',
-    className: 'button_alarm',
+    className: 'button_square button_alarm',
     node: <Notification />,
   },
   {
     ariaLabel: 'History',
-    className: 'button_history',
+    className: 'button_square button_history',
     node: <History />,
   },
   {
     ariaLabel: 'Help',
-    className: 'button_help',
+    className: 'button_square button_help',
     node: <Help />,
   },
 ];

@@ -77,12 +77,10 @@
   padding: 0 8px;
   box-sizing: border-box;
   color: var(--color);
-  /* background: #bfbfbf;
-  border: 1px solid #bfbfbf; */
   background-color: var(--background-card);
   border: 1px solid var(--background-card);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   line-height: 18px;
   align-items: center;

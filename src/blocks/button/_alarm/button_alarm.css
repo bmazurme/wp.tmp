@@ -1,17 +1,3 @@
 .button_alarm {
-  box-sizing: border-box;
-  align-items: center;
-  align-self: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  border: 0;
-  margin: 0 0 0 5px;
-  padding: 0;
-  cursor: pointer;
   background-image: url(../../../images/alarm.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 24px;
-  background-color: #ebebeb;
 }

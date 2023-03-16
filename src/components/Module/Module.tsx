@@ -88,7 +88,7 @@ export default function Module({ module }: { module: string }) {
         <Chip label={module} className="tag" />
         <button
           aria-label="Menu"
-          className="button_menu"
+          className="button_square button_menu"
           type="button"
           onClick={openPopupEditModule}
         />

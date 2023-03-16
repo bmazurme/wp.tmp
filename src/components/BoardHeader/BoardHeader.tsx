@@ -1,35 +1,16 @@
-import React, { ReactNode, useState } from 'react';
+import React from 'react';
 
-import Popup from '../Popup';
+import ProjectName from '../ProjectName';
 import SearchForm from '../SearchForm';
+import ProjectMenu from '../ProjectMenu';
 
-import buttons, { TypeButton } from './buttons';
-
-export default function BoardHeader({ project }: { project: TypeProject | null }) {
-  const onEditProjectName = (e: any) => console.log(e);
-  const [popup, setPopup] = useState(false);
-  const [form, setForm] = useState<ReactNode | null>(null);
-  const openPopup = (name: ReactNode) => {
-    setForm(name);
-    setPopup(true);
-  };
-  const closePopup = () => setPopup(false);
-
+export default function BoardHeader({ project }
+  : { project: TypeProject | null }) {
   return (
     <div className="main__header">
-      <input className="project__name" value={project?.name} onChange={onEditProjectName} />
+      <ProjectName project={project} />
       <SearchForm searchType="module" />
-
-      {buttons.map(({ ariaLabel, className, node }: TypeButton) => (
-        <button
-          key={ariaLabel}
-          aria-label={ariaLabel}
-          className={className}
-          type="button"
-          onClick={() => openPopup(node)}
-        />
-      ))}
-      <Popup isOpen={popup} onClose={closePopup} children={form} />
+      <ProjectMenu />
     </div>
   );
 }
