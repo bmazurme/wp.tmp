@@ -6,7 +6,7 @@ import chroma from 'chroma-js';
 import Chip from '../Chip';
 
 import { ColourOption, colourOptions } from '../../mock/colourOptions';
-import Ws from '../../calc/Ws';
+import Ws from '../../calc/rainwater/Ws';
 import Popup from '../Popup';
 
 const colourStyles: StylesConfig<ColourOption, true> = {

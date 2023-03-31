@@ -52,8 +52,9 @@
     "build": "webpack --mode production",
     "dev": "webpack --watch --mode development",
     "clear": "rm -rf dist/",
-    "prepare": "[ \"$NODE_ENV\" = production ] && exit 0; husky install",
-    "eslint": "npx eslint ./src"
+    "prepare": "husky install",
+    "eslint": "npx eslint ./src",
+    "test": "jest"
   },
   "devDependencies": {
     "@types/bcryptjs": "2.4.2",
@@ -93,5 +94,8 @@
     "hooks": {
       "pre-commit": "npm-run-all test lint:all"
     }
+  },
+  "jest": {
+    "verbose": true
   }
 }

@@ -8,7 +8,7 @@ import AboutPage from './pages/About';
 import ProfilePage from './pages/Profile';
 import ProfileEditPage from './pages/ProfileEdit';
 
-import SigninPage from './pages/SignIn';
+import SigninPage from './pages/Signin';
 import SignupPage from './pages/Signup';
 import SignupConfirmPage from './pages/SignupConfirm';
 import OauthPage from './pages/Oauth';

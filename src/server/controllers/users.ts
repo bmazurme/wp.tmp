@@ -46,9 +46,11 @@ const createUser = (req: any, res: Response, next: NextFunction) => {
       if (err.name === 'ValidationError') {
         return next(new BadRequestError());
       }
+
       if (err.code === 11000) {
         return next(new ConflictError(USER_CONFLICT_RU));
       }
+
       return next(err);
     });
 };
@@ -74,19 +76,14 @@ const updateUser = (req: any, res: Response, next: NextFunction) => {
   User.findByIdAndUpdate(
     // eslint-disable-next-line no-underscore-dangle
     req.user._id,
-    {
-      name,
-      email,
-    },
-    {
-      new: true,
-      runValidators: true,
-    },
+    { name, email },
+    { new: true, runValidators: true },
   )
     .then((data) => {
       if (!data) {
         return next(new NotFoundError(USER_NOT_FOUND_RU));
       }
+
       return res.send(data);
     })
     .catch((err) => {

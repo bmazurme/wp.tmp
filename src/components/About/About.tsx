@@ -1,13 +1,10 @@
 import React from 'react';
+import Nvk from '../Nvk';
 
 export default function About() {
   return (
     <div>
-      <ul>
-        <li>WS</li>
-        <li>HVAC</li>
-      </ul>
-      project-type-calc
+      <Nvk />
     </div>
   );
 }

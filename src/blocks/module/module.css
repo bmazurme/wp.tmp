@@ -13,6 +13,7 @@
   box-sizing: border-box;
   width: 20%;
   min-width: 200px;
+  
 }
 
 .m-container__main {
@@ -20,6 +21,33 @@
   flex-direction: column;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   width: 80%;
   min-width: 600px;
+  max-height: calc(100vh - 200px);
+  /* overflow-y: auto; */
+}
+.calc__form {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  padding-right: 15px;
+  box-sizing: border-box;
+  width: 80%;
+  min-width: 600px;
+  /* max-height: calc(100vh - 100px); */
+  overflow-y: auto;
+}
+.title {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 20px;
+}
+.document-link {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  font-size: 12px;
 }
