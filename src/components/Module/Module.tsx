@@ -6,8 +6,11 @@ import chroma from 'chroma-js';
 import Chip from '../Chip';
 
 import { ColourOption, colourOptions } from '../../mock/colourOptions';
-import Ws from '../../calc/rainwater/Ws';
+import RainWater from '../../calc/rainwater/RainWater';
+import RainWaterTemplate from '../../calc/rainwater/RainWaterTemplate';
 import Popup from '../Popup';
+
+import { TypeResult } from '../../calc/rainwater/types';
 
 const colourStyles: StylesConfig<ColourOption, true> = {
   control: (styles) => ({ ...styles, backgroundColor: 'white' }),
@@ -72,6 +75,8 @@ const colourStyles: StylesConfig<ColourOption, true> = {
 
 export default function Module({ module }: { module: string }) {
   const [popupEditModule, setPopupEditModule] = useState(false);
+  const [popupTemplate, setPopupTemplate] = useState(false);
+  const [result, setResult] = useState<TypeResult | null>(null);
 
   const openPopupEditModule = (e: any) => {
     e.stopPropagation();
@@ -80,6 +85,15 @@ export default function Module({ module }: { module: string }) {
 
   const closePopupEditModule = () => {
     setPopupEditModule(false);
+  };
+
+  const openPopupTemplate = (e: any) => {
+    e.stopPropagation();
+    setPopupTemplate(true);
+  };
+
+  const closePopupTemplate = () => {
+    setPopupTemplate(false);
   };
 
   return (
@@ -93,6 +107,14 @@ export default function Module({ module }: { module: string }) {
           styles={colourStyles}
         />
         <Chip label={module} className="tag" />
+        <Chip label={result ? `${result.flow.toFixed(2)} л/с` : 'not result'} className="tag" />
+        <button
+          type="button"
+          aria-label="Menu"
+          className="button_square button_menu"
+          disabled={!result}
+          onClick={openPopupTemplate}
+        />
         <button
           type="button"
           aria-label="Menu"
@@ -103,7 +125,12 @@ export default function Module({ module }: { module: string }) {
       <Popup
         isOpen={popupEditModule}
         onClose={closePopupEditModule}
-        children={<Ws closePopupEditModule={closePopupEditModule} />}
+        children={<RainWater setResult={setResult} closePopupEditModule={closePopupEditModule} />}
+      />
+      <Popup
+        isOpen={popupTemplate}
+        onClose={closePopupTemplate}
+        children={<RainWaterTemplate result={result} closePopupEditModule={closePopupTemplate} />}
       />
     </>
   );

@@ -1,6 +1,7 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts.css);
 @import url(./blocks/body/body.css);
+@import url(katex/dist/katex.min.css);
 /* root */
 @import url(./blocks/root/root.css);
 /* logo */

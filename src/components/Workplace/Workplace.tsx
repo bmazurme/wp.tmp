@@ -21,15 +21,13 @@ export default function Workplace() {
   }, []);
 
   return (
-    <section>
-      <div className="board">
-        <div className="board__sidebar">
-          <Sidebar />
-        </div>
-        <div className="board__main">
-          {project ? (<Board />) : <Cards />}
-        </div>
+    <div className="board">
+      <div className="board__sidebar">
+        <Sidebar />
       </div>
-    </section>
+      <div className="board__main">
+        {project ? (<Board />) : <Cards />}
+      </div>
+    </div>
   );
 }
