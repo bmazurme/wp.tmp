@@ -54,18 +54,6 @@ export default function getRainFlow({
     + lawns * KOEF.LAWNS) / areaSumm;
   const flow = (zMid * (a ** 1.2) * areaSumm) / (timeSumm ** (1.2 * n - 0.1));
 
-  console.log('time1 = 0.017 * length1 / velocity1');
-  console.log(`${timePipe.toFixed(2)} = 0.017 * ${lengthPipe.toFixed(2)} / ${velocityPipe.toFixed(2)}`);
-  console.log('time2 = 0.021 * length2 + velocity2');
-  console.log(`${timePipe.toFixed(2)} = 0.021 * ${lengthTray.toFixed(2)} / ${velocityTray.toFixed(2)}`);
-  console.log('time = t + time1 + time2');
-  console.log(`${timeSumm.toFixed(2)} = ${timeInit} + ${timePipe.toFixed(2)} + ${timeTray.toFixed(2)}`);
-  console.log('n, p, mr, gamma', n, p, mr, gamma);
-  console.log('area', areaSumm);
-  console.log('zMid, tSum', zMid, timeSumm);
-  console.log('_A, A, Z', pa, a, z);
-  console.log(flow);
-
   return {
     a,
     pa,
