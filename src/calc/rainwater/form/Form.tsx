@@ -2,13 +2,13 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useErrorHandler } from 'react-error-boundary';
 
-import Input from '../../components/Input';
-import Button from '../../components/Button';
-import SelectButton from '../../components/Select';
+import Input from '../../../components/Input';
+import Button from '../../../components/Button';
+import SelectButton from '../../../components/Select';
 
-import places from './places';
-import conditions from './conditions';
-import getRainFlow from './calculation';
+import places from '../utils/places';
+import conditions from '../utils/conditions';
+import getRainFlow from '../utils/calculation';
 
 const options = places.map((x, i) => ({ label: x.name, value: i }));
 
@@ -175,7 +175,7 @@ const inputs = [
   },
 ];
 
-export default function RainWater({ closePopupEditModule, setResult }
+export default function Form({ closePopupEditModule, setResult }
   : { closePopupEditModule: () => void, setResult: any }) {
   const errorHandler = useErrorHandler();
   const { control, handleSubmit } = useForm<FormPayload>({
@@ -230,75 +230,57 @@ export default function RainWater({ closePopupEditModule, setResult }
   });
 
   return (
-    <div className="m-container">
-      <div className="m-container__main">
-        <h2 className="title">Расчет расхода дождевых вод по методу предельных интенсивностей (Qr)</h2>
-        <span className="document-link">
-          Расчет расхода поверхностных сточных вод (Qr) методом предельных интенсивностей
-          производится по формулам рекомендаций 2015 НИИ ВОДГЕО к СП 32.13330.2018, пункт «6.2.1».
-        </span>
-        <form onSubmit={onSubmit} className="calc__form">
-          <div className="inbox">
-            <Controller
-              name={'place' as keyof FormPayload}
-              control={control}
-              render={({ field }) => (
-                <SelectButton
-                  labelText="Географические условия расположения объекта"
-                  classes={{ list: 'bottom-full' }}
-                  options={options}
-                  onChange={(e) => field.onChange(e)}
-                  value={field.value}
-                />
-              )}
+    <form onSubmit={onSubmit} className="calc__form">
+      <div className="inbox">
+        <Controller
+          name={'place' as keyof FormPayload}
+          control={control}
+          render={({ field }) => (
+            <SelectButton
+              labelText="Географические условия расположения объекта"
+              classes={{ list: 'bottom-full' }}
+              options={options}
+              onChange={(e) => field.onChange(e)}
+              value={field.value}
             />
-          </div>
-          <div className="inbox">
-            <Controller
-              name={'condition' as keyof FormPayload}
-              control={control}
-              render={({ field }) => (
-                <SelectButton
-                  labelText="Условия расположения коллекторов"
-                  value={field.value}
-                  classes={{ list: 'bottom-full' }}
-                  options={conditions}
-                  onChange={(e) => field.onChange(e)}
-                />
-              )}
-            />
-          </div>
-          {inputs.map((input) => (
-            <Controller
-              key={input.name}
-              name={input.name as keyof FormPayload}
-              rules={{
-                pattern: input.pattern,
-                required: input.required,
-              }}
-              control={control}
-              render={({ field, fieldState }) => (
-                <Input
-                  {...field}
-                  {...input}
-                  className="input inbox__input"
-                  errorText={fieldState.error?.message}
-                />
-              )}
-            />
-          ))}
-          <Button submit isValid className="button_submit" value="Рассчитать" />
-        </form>
+          )}
+        />
       </div>
-      <div className="m-container__sidebar">
-        <Button isValid className="button_small" value="Status" />
-        <Button isValid className="button_small" value="Calc 1" />
-        <Button isValid className="button_small" value="Calc 2" />
-        <Button isValid className="button_small" value="Calc 3" />
-        <Button isValid className="button_small" value="Template" />
-        <Button isValid className="button_small" value="Export" />
-        <Button isValid className="button_small" value="Share" />
+      <div className="inbox">
+        <Controller
+          name={'condition' as keyof FormPayload}
+          control={control}
+          render={({ field }) => (
+            <SelectButton
+              labelText="Условия расположения коллекторов"
+              value={field.value}
+              classes={{ list: 'bottom-full' }}
+              options={conditions}
+              onChange={(e) => field.onChange(e)}
+            />
+          )}
+        />
       </div>
-    </div>
+      {inputs.map((input) => (
+        <Controller
+          key={input.name}
+          name={input.name as keyof FormPayload}
+          rules={{
+            pattern: input.pattern,
+            required: input.required,
+          }}
+          control={control}
+          render={({ field, fieldState }) => (
+            <Input
+              {...field}
+              {...input}
+              className="input inbox__input"
+              errorText={fieldState.error?.message}
+            />
+          )}
+        />
+      ))}
+      <Button submit isValid className="button_submit" value="Рассчитать" />
+    </form>
   );
 }

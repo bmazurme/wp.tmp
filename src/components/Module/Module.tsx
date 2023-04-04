@@ -6,11 +6,11 @@ import chroma from 'chroma-js';
 import Chip from '../Chip';
 
 import { ColourOption, colourOptions } from '../../mock/colourOptions';
-import RainWater from '../../calc/rainwater/RainWater';
-import RainWaterTemplate from '../../calc/rainwater/RainWaterTemplate';
+import RainWater from '../../calc/rainwater/form/RainWater';
+import Template from '../../calc/rainwater/template/Template';
 import Popup from '../Popup';
 
-import { TypeResult } from '../../calc/rainwater/types';
+import { TypeResult } from '../../calc/rainwater/utils/types';
 
 const colourStyles: StylesConfig<ColourOption, true> = {
   control: (styles) => ({ ...styles, backgroundColor: 'white' }),
@@ -130,7 +130,7 @@ export default function Module({ module }: { module: string }) {
       <Popup
         isOpen={popupTemplate}
         onClose={closePopupTemplate}
-        children={<RainWaterTemplate result={result} closePopupEditModule={closePopupTemplate} />}
+        children={<Template result={result} closePopupEditModule={closePopupTemplate} />}
       />
     </>
   );
