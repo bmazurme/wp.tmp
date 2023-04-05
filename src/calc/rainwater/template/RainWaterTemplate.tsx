@@ -26,7 +26,7 @@ export default function RainWaterTemplate({ result }: { result: TypeResult | nul
         <span className="result_paragraph">
           где
           <InlineMath>\medspace A\medspace , \medspace n\medspace -\medspace</InlineMath>
-          xпараметры, характеризующие расчетную интенсивность дождя для конкретной местности;
+          параметры, характеризующие расчетную интенсивность дождя для конкретной местности;
         </span>
         <span className="result_paragraph">
           <InlineMath>{zMid}</InlineMath>
@@ -45,12 +45,8 @@ export default function RainWaterTemplate({ result }: { result: TypeResult | nul
         <span className="result_paragraph">{`Суммарная площадь стоков: ${result?.areaSumm.toFixed(2)} Га`}</span>
         <span className="result_paragraph">из них:</span>
         <ul className="result__list">
-          <li>
-            {`Кровля зданий и сооружений, асфальтобетонные покрытия дорог: ${result?.area.roof.toFixed(2)} Га`}
-          </li>
-          <li>
-            {`Брусчатые мостовые и черные щебеночные покрытия дорог: ${result?.area.pavements.toFixed(2)} Га`}
-          </li>
+          <li>{`Кровля зданий и сооружений, асфальтобетонные покрытия дорог: ${result?.area.roof.toFixed(2)} Га`}</li>
+          <li>{`Брусчатые мостовые и черные щебеночные покрытия дорог: ${result?.area.pavements.toFixed(2)} Га`}</li>
           <li>{`Булыжные мостовые: ${result?.area.cobblestone.toFixed(2)} Га`}</li>
           <li>{`Щебеночные покрытия, не обработанные вяжущими: ${result?.area.stone.toFixed(2)} Га`}</li>
           <li>{`Гравийные садово-парковые дорожки: ${result?.area.tracks.toFixed(2)} Га`}</li>

@@ -10,6 +10,8 @@ import places from '../utils/places';
 import conditions from '../utils/conditions';
 import getRainFlow from '../utils/calculation';
 
+import { TypeResult } from '../utils/types';
+
 const options = places.map((x, i) => ({ label: x.name, value: i }));
 
 type FormPayload = {
@@ -176,7 +178,7 @@ const inputs = [
 ];
 
 export default function Form({ closePopupEditModule, setResult }
-  : { closePopupEditModule: () => void, setResult: any }) {
+  : { closePopupEditModule: () => void, setResult: (result: TypeResult) => void }) {
   const errorHandler = useErrorHandler();
   const { control, handleSubmit } = useForm<FormPayload>({
     defaultValues: {

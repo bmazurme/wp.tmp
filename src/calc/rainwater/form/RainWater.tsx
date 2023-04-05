@@ -2,9 +2,10 @@ import React from 'react';
 
 import Form from './Form';
 import CalcSidebar from './CalcSidebar';
+import { TypeResult } from '../utils/types';
 
 export default function RainWater({ closePopupEditModule, setResult }
-  : { closePopupEditModule: () => void, setResult: any }) {
+  : { closePopupEditModule: () => void, setResult: (result: TypeResult) => void }) {
   return (
     <div className="m-container">
       <div className="m-container__main">

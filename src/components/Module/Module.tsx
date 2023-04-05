@@ -3,14 +3,10 @@ import React, { useState } from 'react';
 import Select, { StylesConfig } from 'react-select';
 import chroma from 'chroma-js';
 
-import Chip from '../Chip';
-
 import { ColourOption, colourOptions } from '../../mock/colourOptions';
-import RainWater from '../../calc/rainwater/form/RainWater';
-import Template from '../../calc/rainwater/template/Template';
+import RainWater, { Template, TypeResult } from '../../calc/rainwater';
+import Chip from '../Chip';
 import Popup from '../Popup';
-
-import { TypeResult } from '../../calc/rainwater/utils/types';
 
 const colourStyles: StylesConfig<ColourOption, true> = {
   control: (styles) => ({ ...styles, backgroundColor: 'white' }),
@@ -78,7 +74,7 @@ export default function Module({ module }: { module: string }) {
   const [popupTemplate, setPopupTemplate] = useState(false);
   const [result, setResult] = useState<TypeResult | null>(null);
 
-  const openPopupEditModule = (e: any) => {
+  const openPopupEditModule = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setPopupEditModule(true);
   };
@@ -87,7 +83,7 @@ export default function Module({ module }: { module: string }) {
     setPopupEditModule(false);
   };
 
-  const openPopupTemplate = (e: any) => {
+  const openPopupTemplate = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setPopupTemplate(true);
   };

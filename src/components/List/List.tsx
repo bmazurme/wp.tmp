@@ -5,7 +5,7 @@ import React from 'react';
 export default function List({
   openProject, item, items, sidebar,
 }: {
-  openProject:any,
+  openProject: any,
   item: TypeProject | Record<string, string> | null,
   items: TypeProject[] | Record<string, string>[],
   sidebar?: boolean,
