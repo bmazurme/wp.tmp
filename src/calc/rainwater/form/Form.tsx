@@ -12,6 +12,8 @@ import getRainFlow from '../utils/calculation';
 
 import { TypeResult } from '../utils/types';
 
+import collection from '../../collection';
+
 const options = places.map((x, i) => ({ label: x.name, value: i }));
 
 type FormPayload = {
@@ -224,6 +226,8 @@ export default function Form({ closePopupEditModule, setResult }
       });
       setResult(result);
       console.log(result);
+
+      [1, 2, 3, 4].forEach((x) => collection.get(x));
 
       closePopupEditModule();
     } catch ({ status, data: { reason } }) {
