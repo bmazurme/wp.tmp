@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Avatar from '../Avatar';
+import Avatar from '../avatar';
 
 export default function ProfileButton({ isOpen }: { isOpen: boolean}) {
   return (
