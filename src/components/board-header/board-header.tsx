@@ -1,8 +1,8 @@
 import React from 'react';
 
-import ProjectName from '../ProjectName';
-import ProjectMenu from '../ProjectMenu';
-import SearchForm from '../SearchForm';
+import ProjectName from '../project-name';
+import ProjectMenu from '../project-menu';
+import SearchForm from '../search-form';
 
 export default function BoardHeader({ project }
   : { project: TypeProject | null }) {
