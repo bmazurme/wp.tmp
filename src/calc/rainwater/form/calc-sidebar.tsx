@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from '../../../components/Button';
+import Button from '../../../components/button';
 
 const buttons = [
   'Status', 'Calc 1', 'Calc 2', 'Calc 3', 'Template', 'Export', 'Share',
