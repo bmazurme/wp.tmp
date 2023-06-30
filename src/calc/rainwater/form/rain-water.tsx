@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Form from './Form';
-import CalcSidebar from './CalcSidebar';
+import Form from './form';
+import CalcSidebar from './calc-sidebar';
 import { TypeResult } from '../utils/types';
 
 export default function RainWater({ closePopupEditModule, setResult }
