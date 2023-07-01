@@ -12,16 +12,16 @@ import ru from 'date-fns/locale/ru';
 import Select, { StylesConfig } from 'react-select';
 import chroma from 'chroma-js';
 
-import Button from '../Button';
-import Input from '../Input';
-import Checkbox from '../Checkbox';
-import Switcher from '../Switcher';
-import SelectButton from '../Select';
-import Map from '../Map';
-import Accordion from '../Accordion';
-import Chip from '../Chip';
+import Button from '../button';
+import Input from '../input';
+import Checkbox from '../checkbox';
+import Switcher from '../switcher';
+import SelectButton from '../select';
+import Map from '../map';
+import Accordion from '../accordion';
+import Chip from '../chip';
 
-import { ColourOption } from '../../mock/colourOptions';
+import { ColourOption } from '../../mock/colour-options';
 
 registerLocale('ru', ru);
 
