@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Content from '../../components/Content';
-import About from '../../components/About';
-import withUser from '../../hoc/withUser';
+import Content from '../../components/content';
+import About from '../../layouts/about';
+import withUser from '../../hocs/with-user';
 
 function AboutPage() {
   return (<Content children={<About />} />);
