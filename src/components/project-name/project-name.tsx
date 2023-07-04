@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
 // import { useErrorHandler } from 'react-error-boundary';
-import makeDataSelector from '../../store/makeDataSelector';
+import makeDataSelector from '../../store/make-data-selector';
 import { store } from '../../store';
 
 type FormPayload = {
