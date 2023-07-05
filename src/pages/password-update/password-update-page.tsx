@@ -1,7 +1,7 @@
 import React from 'react';
 
-import PasswordUpdate from '../../components/PasswordUpdate';
-import withUser from '../../hoc/withUser';
+import PasswordUpdate from '../../layouts/password-update';
+import withUser from '../../hocs/with-user';
 
 function PasswordUpdatePage() {
   return (<PasswordUpdate />);
