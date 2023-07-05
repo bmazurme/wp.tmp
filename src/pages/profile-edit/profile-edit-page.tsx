@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ProfileEdit from '../../components/ProfileEdit';
-import withUser from '../../hoc/withUser';
+import ProfileEdit from '../../layouts/profile-edit';
+import withUser from '../../hocs/with-user';
 
 function ProfileEditPage() {
   return (<ProfileEdit />);
