@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Oauth from '../../components/Oauth';
+import Oauth from '../../layouts/oauth';
 
 export default function OauthPage() {
   return (<Oauth />);

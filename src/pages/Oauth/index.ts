@@ -1,3 +1,3 @@
-import OauthPage from './OauthPage';
+import OauthPage from './oauth-page';
 
 export default OauthPage;
