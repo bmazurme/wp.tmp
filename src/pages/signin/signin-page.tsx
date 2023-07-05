@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Signin from '../../components/Signin';
+import Signin from '../../layouts/signin';
 
 export default function SigninPage() {
   return (<Signin />);
