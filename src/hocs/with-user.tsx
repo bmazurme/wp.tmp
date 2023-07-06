@@ -4,9 +4,9 @@ import { Navigate } from 'react-router-dom';
 import { useErrorHandler } from 'react-error-boundary';
 import type { AxiosError } from 'axios';
 
-import Preloader from '../components/Preloader';
+import Preloader from '../components/preloader';
 
-import useUser from '../hook/useUser';
+import useUser from '../hooks/use-user';
 import { useGetUserMutation } from '../store';
 
 export default function withUser<P extends Record<string, unknown>>(
