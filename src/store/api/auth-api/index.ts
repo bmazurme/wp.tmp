@@ -1,6 +1,6 @@
-import createApi from '../../createApi';
+import createApi from '../../create-api';
 
-import { getBaseQuery } from '../../baseQuery';
+import { getBaseQuery } from '../../base-query';
 
 const baseQuery = getBaseQuery('https://ya-praktikum.tech/api/v2/auth');
 
