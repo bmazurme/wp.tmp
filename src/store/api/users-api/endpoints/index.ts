@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable import/prefer-default-export */
 import usersApi from '..';
-import { setCredentials } from '../../../slices/userSlice';
+import { setCredentials } from '../../../slices/user-slice';
 
 const usersApiEndpoints = usersApi
   .enhanceEndpoints({
