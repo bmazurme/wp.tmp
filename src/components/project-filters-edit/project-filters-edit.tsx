@@ -2,8 +2,8 @@ import React from 'react';
 import { useErrorHandler } from 'react-error-boundary';
 import { Controller, useForm } from 'react-hook-form';
 
-import Button from '../Button';
-import Input from '../Input';
+import Button from '../button';
+import Input from '../input';
 
 type FormPayload = {
   ws: string;
