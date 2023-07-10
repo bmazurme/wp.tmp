@@ -3,9 +3,9 @@ import type { PropsWithChildren } from 'react';
 import { ErrorBoundary, type FallbackProps } from 'react-error-boundary';
 import { Link } from 'react-router-dom';
 
-import Button from '../Button';
-import Header from '../Header';
-import Footer from '../Footer';
+import Button from '../button';
+import Header from '../header';
+import Footer from '../footer';
 
 type ErrorBoundaryWrapperProps = PropsWithChildren<unknown>;
 
