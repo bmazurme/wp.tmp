@@ -1,5 +1,5 @@
-import RainWater from './form/RainWater';
-import Template from './template/Template';
+import RainWater from './form/rain-water';
+import Template from './template/template';
 import { TypeResult } from './utils/types';
 
 export default RainWater;

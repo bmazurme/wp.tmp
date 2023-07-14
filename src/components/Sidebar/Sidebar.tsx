@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import makeDataSelector from '../../store/makeDataSelector';
+import makeDataSelector from '../../store/make-data-selector';
 import { store } from '../../store';
 
-import ButtonAdd from '../ButtonAdd';
-import List from '../List';
-import Banner from '../Banner';
+import ButtonAdd from '../button-add';
+import List from '../list';
+import Banner from '../banner';
 
 const projectSelector = makeDataSelector('project');
 

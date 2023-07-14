@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Accordion from '../Accordion';
+import Accordion from '../accordion';
 import notification from '../../mock/notification';
 
 export default function Notification() {

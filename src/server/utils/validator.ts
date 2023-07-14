@@ -1,7 +1,7 @@
 import { celebrate, Joi } from 'celebrate';
 import validator from 'validator';
 import { isValidObjectId } from 'mongoose';
-import BadRequestError from '../errors/BadRequestError';
+import BadRequestError from '../errors/bad-request-error';
 
 const checkUrl = (value: string, helpers: any) => {
   if (validator.isURL(value)) {

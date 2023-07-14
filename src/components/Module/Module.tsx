@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import Select, { StylesConfig } from 'react-select';
 import chroma from 'chroma-js';
 
-import { ColourOption, colourOptions } from '../../mock/colourOptions';
+import { ColourOption, colourOptions } from '../../mock/colour-options';
 import RainWater, { Template, TypeResult } from '../../calc/rainwater';
-import Chip from '../Chip';
-import Popup from '../Popup';
+import Chip from '../chip';
+import Popup from '../popup';
 
 const colourStyles: StylesConfig<ColourOption, true> = {
   control: (styles) => ({ ...styles, backgroundColor: 'white' }),

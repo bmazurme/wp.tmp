@@ -2,13 +2,13 @@ import { NextFunction, Request, Response } from 'express';
 
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import BadRequestError from '../errors/BadRequestError';
-import NotFoundError from '../errors/NotFoundError';
-import UnauthorizedError from '../errors/UnauthorizedError';
-import ConflictError from '../errors/ConflictError';
+import BadRequestError from '../errors/bad-request-error';
+import NotFoundError from '../errors/not-found-error';
+import UnauthorizedError from '../errors/unauthorized-error';
+import ConflictError from '../errors/conflict-error';
 
-import { DEV_JWT_SECRET } from '../utils/devConfig';
-import { USER_NOT_FOUND_RU, USER_BAD_REQUEST_RU, USER_CONFLICT_RU } from '../utils/constErrors';
+import { DEV_JWT_SECRET } from '../utils/dev-config';
+import { USER_NOT_FOUND_RU, USER_BAD_REQUEST_RU, USER_CONFLICT_RU } from '../utils/const-errors';
 import User from '../models/user';
 
 const login = (req: Request, res: Response, next: NextFunction) => {

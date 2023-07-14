@@ -4,9 +4,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store';
 
-import App from './App';
+import App from './app';
 
-import ErrorBoundaryWrapper from './components/ErrorBoundaryWrapper';
+import ErrorBoundaryWrapper from './components/error-boundary-wrapper';
 
 import './index.css';
 import './react-datepicker.css';

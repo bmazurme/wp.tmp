@@ -1,25 +1,25 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import WorkplacePage from './pages/Workplace';
-import UiKitPage from './pages/UiKit';
-import AboutPage from './pages/About';
+import WorkplacePage from './pages/workplace';
+import UiKitPage from './pages/ui-kit';
+import AboutPage from './pages/about';
 
-import ProfilePage from './pages/Profile';
-import ProfileEditPage from './pages/ProfileEdit';
+import ProfilePage from './pages/profile';
+import ProfileEditPage from './pages/profile-edit';
 
-import SigninPage from './pages/Signin';
-import SignupPage from './pages/Signup';
-import SignupConfirmPage from './pages/SignupConfirm';
-import OauthPage from './pages/Oauth';
+import SigninPage from './pages/signin';
+import SignupPage from './pages/signup';
+import SignupConfirmPage from './pages/signup-confirm';
+import OauthPage from './pages/oauth';
 
-import PasswordResetPage from './pages/PasswordReset';
-import PasswordNew from './pages/PasswordNew';
-import PasswordUpdate from './pages/PasswordUpdate';
+import PasswordResetPage from './pages/password-reset';
+import PasswordNew from './pages/password-new';
+import PasswordUpdate from './pages/password-update';
 
-import NotFoundPage from './pages/NotFound';
+import NotFoundPage from './pages/not-found';
 
-import ThemeContext from './context/ThemeContext';
+import ThemeContext from './context/theme-context';
 
 import { Paths } from './utils/constants';
 
@@ -42,8 +42,10 @@ export default function App() {
         <Route path={Paths.SIGN.CONFIRM} element={(<SignupConfirmPage />)} />
         <Route path={Paths.OAUTH} element={(<OauthPage />)} />
 
-        <Route path={Paths.PROFILE.INDEX} element={(<ProfilePage />)} />
-        <Route path={Paths.PROFILE.EDIT} element={(<ProfileEditPage />)} />
+        <Route path={Paths.PROFILE.INDEX}>
+          <Route index element={(<ProfilePage />)} />
+          <Route path={Paths.PROFILE.EDIT} element={(<ProfileEditPage />)} />
+        </Route>
 
         <Route path={Paths.PASSWORD.RESET} element={(<PasswordResetPage />)} />
         <Route path={Paths.PASSWORD.UPDATE} element={(<PasswordUpdate />)} />

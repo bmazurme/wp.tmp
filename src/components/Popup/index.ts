@@ -1,5 +1,5 @@
-import Popup from './Popup';
-import InfoTooltip from './InfoTooltip';
+import Popup from './popup';
+import InfoTooltip from './info-tooltip';
 
 export default Popup;
 export { InfoTooltip };

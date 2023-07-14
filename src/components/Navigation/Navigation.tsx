@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { useSignOutMutation } from '../../store';
-import ProfileButton from '../ProfileButton';
+import ProfileButton from '../profile-button';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);

@@ -19,7 +19,7 @@ export const Paths = {
   },
   PROFILE: {
     INDEX: '/profile',
-    EDIT: '/profile/edit',
+    EDIT: 'edit',
   },
   PROJECT: {
     INDEX: '/project',

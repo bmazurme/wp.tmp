@@ -1,6 +1,6 @@
 import React from 'react';
 
-import List from '../List';
+import List from '../list';
 import history from '../../mock/history';
 
 export default function History() {

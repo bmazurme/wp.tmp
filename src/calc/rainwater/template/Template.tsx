@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TempSidebar from './TempSidebar';
-import RainWaterTemplate from './RainWaterTemplate';
+import TempSidebar from './temp-sidebar';
+import RainWaterTemplate from './rain-water-template';
 import { TypeResult } from '../utils/types';
 
 export default function Template({ closePopupEditModule, result }

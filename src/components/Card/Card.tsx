@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { store } from '../../store';
-import Chip from '../Chip';
+import Chip from '../chip';
 
 export default function Card({ card }: { card: TypeProject }) {
   const openProject = (current: TypeProject) => store.dispatch({ type: 'project/setProject', payload: current });

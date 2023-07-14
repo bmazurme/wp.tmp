@@ -1,2 +1,2 @@
-export * from './userSlice';
-export * from './projectSlice';
+export * from './user-slice';
+export * from './project-slice';

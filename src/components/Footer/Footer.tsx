@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { linksFooter } from '../../mock/linksFooter';
+import { linksFooter } from '../../mock/links-footer';
 
 export default function Footer() {
   return (

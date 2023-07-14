@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Card from '../Card';
-import makeDataSelector from '../../store/makeDataSelector';
+import Card from '../card';
+import makeDataSelector from '../../store/make-data-selector';
 
 const projectSelector = makeDataSelector('project');
 

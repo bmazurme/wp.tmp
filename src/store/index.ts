@@ -5,12 +5,12 @@ import { createReduxHistoryContext } from 'redux-first-history';
 import { createBrowserHistory, createMemoryHistory } from 'history';
 
 import { authApi, usersApi, moviesApi } from './api';
-import userReducer from './slices/userSlice';
-import projectReducer from './slices/projectSlice';
+import userReducer from './slices/user-slice';
+import projectReducer from './slices/project-slice';
 import { isServer } from '../utils';
 
-export * from './api/authApi/endpoints';
-export * from './api/usersApi/endpoints';
+export * from './api/auth-api/endpoints';
+export * from './api/users-api/endpoints';
 export * from './slices';
 
 // global redeclared types

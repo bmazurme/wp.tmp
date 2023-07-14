@@ -3,9 +3,9 @@ import { useForm, Controller } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import Select from 'react-select';
 
-import BoardHeader from '../BoardHeader';
-import Modules from '../Modules';
-import makeDataSelector from '../../store/makeDataSelector';
+import BoardHeader from '../board-header';
+import Modules from '../modules';
+import makeDataSelector from '../../store/make-data-selector';
 import options, { TypeOption } from '../../mock/options';
 
 const projectSelector = makeDataSelector('project');

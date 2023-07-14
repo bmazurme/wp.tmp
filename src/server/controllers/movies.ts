@@ -2,11 +2,11 @@
 import { NextFunction, Request, Response } from 'express';
 
 import Movie from '../models/movie';
-import BadRequestError from '../errors/BadRequestError';
-import NotFoundError from '../errors/NotFoundError';
-import ForbiddenError from '../errors/ForbiddenError';
+import BadRequestError from '../errors/bad-request-error';
+import NotFoundError from '../errors/not-found-error';
+import ForbiddenError from '../errors/forbidden-error';
 
-import { FILM_NOT_FOUND_RU, BAD_REQUEST_RU, FORBIDDEN_RU } from '../utils/constErrors';
+import { FILM_NOT_FOUND_RU, BAD_REQUEST_RU, FORBIDDEN_RU } from '../utils/const-errors';
 
 const createMovie = (req: any, res: Response, next: NextFunction) => {
   const mov = req.body;

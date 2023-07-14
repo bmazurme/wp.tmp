@@ -1,3 +1,3 @@
-import Module from './Module';
+import Module from './module';
 
 export default Module;

@@ -11,10 +11,10 @@ import { config as dotEnvConfig } from 'dotenv';
 import limiter from './utils/limiter';
 
 // import index from './routes/index';
-import NotFoundError from './errors/NotFoundError';
-import errorHandler from './middlewares/errorHandler';
+import NotFoundError from './errors/not-found-error';
+import errorHandler from './middlewares/error-handler';
 
-import corsOptions from './utils/corsOptions';
+import corsOptions from './utils/cors-options';
 import { requestLogger, errorLogger } from './middlewares/logger';
 
 dotEnvConfig();

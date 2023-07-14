@@ -1,3 +1,3 @@
-import WorkplacePage from './WorkplacePage';
+import WorkplacePage from './workplace-page';
 
 export default WorkplacePage;

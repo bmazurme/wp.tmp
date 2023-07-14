@@ -1,3 +1,3 @@
-import Project from './Project';
+import Project from './project';
 
 export default Project;

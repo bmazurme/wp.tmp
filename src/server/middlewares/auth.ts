@@ -1,8 +1,8 @@
 import { NextFunction, Response } from 'express';
 
 import jwt from 'jsonwebtoken';
-import UnauthorizedError from '../errors/UnauthorizedError';
-import { DEV_JWT_SECRET } from '../utils/devConfig';
+import UnauthorizedError from '../errors/unauthorized-error';
+import { DEV_JWT_SECRET } from '../utils/dev-config';
 // import { IUser } from '../models/user';
 
 export default (req: any, res: Response, next: NextFunction) => {

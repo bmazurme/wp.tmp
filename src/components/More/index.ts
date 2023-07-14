@@ -1,3 +1,3 @@
-import More from './More';
+import More from './more';
 
 export default More;
